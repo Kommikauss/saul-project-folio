@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import logoSaul from "@/assets/logo_saul.png";
+import logoSaul from "@/assets/logo_saul_transparent.png";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
