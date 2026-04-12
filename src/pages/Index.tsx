@@ -11,7 +11,7 @@ import CustomCursor from "@/components/CustomCursor";
 
 const Index = () => (
   <>
-    <CustomCursor />
+    
     <Navbar />
     <HeroSection />
     <ServicesSection />
