@@ -25,7 +25,7 @@ const FloatingCTA = () => {
           className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-foreground/95 backdrop-blur-md border border-background/10 rounded-2xl px-6 py-3 flex items-center gap-4 shadow-2xl"
         >
           <span className="text-background text-sm font-medium hidden sm:block">
-            Vajad pakkumist?
+            Soovid pakkumist?
           </span>
           <a
             href="mailto:info@saulproject.ee"

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import logoSaul from "@/assets/logo_saul_transparent.png";
+import logoSaul from "@/assets/logo_saul_new.png";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -16,7 +16,6 @@ const Navbar = () => {
 
   const navLinks = [
     { label: "Teenused", href: "#teenused" },
-    { label: "Korteriühistutele", href: "#korteruhistu" },
     { label: "Meist", href: "#meist" },
     { label: "Kontakt", href: "#kontakt" },
   ];
