@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone, Clock, MessageSquare, Home, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
