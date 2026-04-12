@@ -1,96 +1,138 @@
 import { motion } from "framer-motion";
-import { MapPin, Clock, CheckCircle } from "lucide-react";
+import { MapPin, Clock, Shield } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const HeroSection = () => {
-  const headlineWords = ["Usaldusväärne", "partner", "remondi-", "ja", "ehitustöödeks"];
-  const orangeWords = new Set(["partner", "ehitustöödeks"]);
-
   const badges = [
-    { icon: MapPin, text: "Üle Eesti" },
-    { icon: Clock, text: "24h vastus" },
-    { icon: CheckCircle, text: "200+ projekti" },
+    { icon: MapPin, text: "Töötame üle Eesti" },
+    { icon: Clock, text: "Vastame 24h jooksul" },
+    { icon: Shield, text: "Selge hinnastamine" },
   ];
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden grain-overlay">
-      {/* Background image */}
-      <div className="absolute inset-0">
-        <img
-          src={heroBg}
-          alt="Remont ja ehitustööd"
-          width={1920}
-          height={1080}
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-dark/95 via-dark/80 to-dark/50" />
-      </div>
+    <section className="relative min-h-[90vh] flex items-center bg-background overflow-hidden pt-20">
+      {/* Grid layout: text left, image right */}
+      <div className="max-w-7xl mx-auto px-6 lg:px-10 w-full">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Text content */}
+          <div className="relative z-10 py-16 lg:py-24">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+            >
+              <h1 className="font-heading font-extrabold text-4xl sm:text-5xl md:text-6xl leading-[1.1] tracking-tight mb-6 text-foreground">
+                Usaldusväärne partner{" "}
+                <span className="text-primary">remondi-</span> ja{" "}
+                <span className="text-primary">ehitustöödeks</span>
+              </h1>
+            </motion.div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 w-full pt-32 pb-20 lg:pt-40 lg:pb-28">
-        <div className="max-w-3xl">
-          {/* Headline with word-by-word reveal */}
-          <h1 className="font-heading font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight mb-8">
-            {headlineWords.map((word, i) => (
-              <motion.span
-                key={i}
-                initial={{ opacity: 0, filter: "blur(10px)", y: 20 }}
-                animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
-                transition={{ delay: 0.3 + i * 0.12, duration: 0.6, ease: "easeOut" }}
-                className={`inline-block mr-[0.3em] ${
-                  orangeWords.has(word) ? "text-primary" : "text-primary-foreground"
-                }`}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.6 }}
+              className="text-lg text-muted-foreground max-w-lg mb-8 leading-relaxed"
+            >
+              Korterid, korteriühistud ja tehnilised lahendused — töötame
+              korralikult, selgelt ja õigeaegselt.
+            </motion.p>
+
+            {/* CTAs */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.5 }}
+              className="flex flex-wrap gap-4 mb-10"
+            >
+              <a
+                href="mailto:info@saulproject.ee"
+                className="bg-foreground text-background px-8 py-4 rounded-lg font-heading font-bold text-base hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
               >
-                {word}
-              </motion.span>
-            ))}
-          </h1>
+                Küsi pakkumist
+              </a>
+              <a
+                href="tel:+3725555123"
+                className="border-2 border-foreground text-foreground px-8 py-4 rounded-lg font-heading font-semibold text-base hover:bg-foreground hover:text-background transition-all duration-300"
+              >
+                Helista: +372 5555 1234
+              </a>
+            </motion.div>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.1, duration: 0.6 }}
-            className="text-lg md:text-xl text-primary-foreground/70 max-w-xl mb-10 leading-relaxed"
-          >
-            Korterid, korteriühistud ja tehnilised lahendused — töötame korralikult, selgelt ja õigeaegselt.
-          </motion.p>
-
-          {/* CTAs */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.3, duration: 0.5 }}
-            className="flex flex-wrap gap-4 mb-12"
-          >
-            <a
-              href="mailto:info@saulproject.ee"
-              className="bg-primary text-primary-foreground px-8 py-4 rounded-lg font-heading font-bold text-base hover:brightness-110 transition-all duration-200 hover:scale-105"
+            {/* Trust badges */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.8, duration: 0.6 }}
+              className="flex flex-wrap gap-6"
             >
-              Küsi pakkumist
-            </a>
-            <a
-              href="tel:+3725555123"
-              className="border border-primary-foreground/30 text-primary-foreground px-8 py-4 rounded-lg font-heading font-semibold text-base hover:bg-primary-foreground/10 transition-all duration-200"
-            >
-              Helista
-            </a>
-          </motion.div>
+              {badges.map((badge, i) => (
+                <div key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+                    <badge.icon size={14} className="text-primary" />
+                  </div>
+                  <span className="font-medium">{badge.text}</span>
+                </div>
+              ))}
+            </motion.div>
+          </div>
 
-          {/* Trust badges */}
+          {/* Hero image */}
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.6, duration: 0.6 }}
-            className="flex flex-wrap gap-6 text-primary-foreground/50 text-sm"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
+            className="relative hidden lg:block"
           >
-            {badges.map((badge, i) => (
-              <div key={i} className="flex items-center gap-2">
-                <badge.icon size={16} className="text-primary" />
-                <span>{badge.text}</span>
-              </div>
-            ))}
+            <div className="relative rounded-2xl overflow-hidden aspect-[4/5]">
+              <img
+                src={heroBg}
+                alt="Remont ja ehitustööd"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 to-transparent" />
+            </div>
+            {/* Floating stat card */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1, duration: 0.5 }}
+              className="absolute -bottom-6 -left-6 bg-background rounded-xl shadow-xl p-5 border border-border"
+            >
+              <motion.div
+                animate={{ scale: [1, 1.02, 1] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+              >
+                <span className="font-heading font-extrabold text-3xl text-primary">200+</span>
+                <p className="text-sm text-muted-foreground font-medium">Lõpetatud projekti</p>
+              </motion.div>
+            </motion.div>
+            {/* Floating badge top-right */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 1.2, duration: 0.5 }}
+              className="absolute -top-4 -right-4 bg-primary text-primary-foreground rounded-xl shadow-xl px-4 py-3"
+            >
+              <motion.div
+                animate={{ rotate: [0, 2, -2, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              >
+                <span className="font-heading font-bold text-sm">8+ aastat</span>
+                <p className="text-xs text-primary-foreground/80">kogemust</p>
+              </motion.div>
+            </motion.div>
           </motion.div>
         </div>
       </div>
+
+      {/* Subtle background decoration */}
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/5 to-transparent pointer-events-none" />
+      <motion.div
+        animate={{ y: [0, -20, 0] }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute top-1/4 right-1/4 w-64 h-64 rounded-full bg-primary/5 blur-3xl pointer-events-none"
+      />
     </section>
   );
 };

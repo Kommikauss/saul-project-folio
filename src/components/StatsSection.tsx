@@ -32,16 +32,16 @@ const Counter = ({ target, suffix }: { target: number; suffix: string }) => {
   }, [inView, target]);
 
   return (
-    <span ref={ref} className="font-heading font-extrabold text-5xl md:text-6xl lg:text-7xl text-primary-foreground">
+    <span ref={ref} className="font-heading font-extrabold text-4xl md:text-5xl text-foreground">
       {count}{suffix}
     </span>
   );
 };
 
 const StatsSection = () => (
-  <section className="bg-dark-forest py-20 lg:py-24 grain-overlay">
-    <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-6">
+  <section className="py-16 bg-background border-y border-border">
+    <div className="max-w-7xl mx-auto px-6 lg:px-10">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
         {stats.map((stat, i) => (
           <motion.div
             key={i}
@@ -49,10 +49,10 @@ const StatsSection = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.1, duration: 0.5 }}
-            className="text-center lg:text-left"
+            className="text-center"
           >
             <Counter target={stat.value} suffix={stat.suffix} />
-            <p className="text-primary-foreground/50 text-sm mt-2 font-medium">{stat.label}</p>
+            <p className="text-muted-foreground text-sm mt-2 font-medium">{stat.label}</p>
           </motion.div>
         ))}
       </div>

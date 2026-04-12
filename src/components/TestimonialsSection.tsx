@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Quote } from "lucide-react";
 
 const testimonials = [
   {
@@ -19,37 +20,45 @@ const testimonials = [
 ];
 
 const TestimonialsSection = () => (
-  <section className="py-24 lg:py-32 bg-muted/40">
+  <section className="py-24 lg:py-32 bg-background">
     <div className="max-w-7xl mx-auto px-6 lg:px-10">
-      <motion.h2
+      <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="font-heading font-extrabold text-3xl md:text-4xl text-foreground mb-16"
+        className="text-center mb-16"
       >
-        Mida kliendid ütlevad
-      </motion.h2>
+        <h2 className="font-heading font-extrabold text-3xl md:text-4xl text-foreground mb-4">
+          Mida kliendid ütlevad
+        </h2>
+      </motion.div>
 
-      <div className="grid md:grid-cols-3 gap-8">
+      <div className="grid md:grid-cols-3 gap-6">
         {testimonials.map((t, i) => (
           <motion.blockquote
             key={i}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: i * 0.1, duration: 0.5 }}
-            className="relative"
+            transition={{ delay: i * 0.12, duration: 0.5 }}
+            whileHover={{ y: -4 }}
+            className="bg-muted/40 rounded-2xl p-7 border border-border hover:border-primary/20 transition-all duration-300 relative"
           >
-            <span className="text-primary/20 text-6xl font-heading font-bold absolute -top-4 -left-2 select-none">"</span>
-            <p className="text-foreground/80 leading-relaxed mb-6 relative">
+            <Quote size={24} className="text-primary/20 mb-4" />
+            <p className="text-foreground/80 leading-relaxed mb-6 text-sm">
               {t.quote}
             </p>
-            <footer>
-              <cite className="not-italic font-heading font-bold text-foreground text-sm">
-                {t.name}
-              </cite>
-              <p className="text-muted-foreground text-xs mt-0.5">{t.role}</p>
+            <footer className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                <span className="font-heading font-bold text-primary text-sm">{t.name[0]}</span>
+              </div>
+              <div>
+                <cite className="not-italic font-heading font-bold text-foreground text-sm block">
+                  {t.name}
+                </cite>
+                <p className="text-muted-foreground text-xs">{t.role}</p>
+              </div>
             </footer>
           </motion.blockquote>
         ))}

@@ -7,10 +7,8 @@ const CustomCursor = () => {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    // Only show on non-touch devices
     const mq = window.matchMedia("(pointer: fine)");
     if (!mq.matches) return;
-
     setVisible(true);
 
     const move = (e: MouseEvent) => setPos({ x: e.clientX, y: e.clientY });
@@ -31,15 +29,15 @@ const CustomCursor = () => {
 
   return (
     <motion.div
-      className="fixed top-0 left-0 pointer-events-none z-[9999] rounded-full bg-primary mix-blend-difference"
+      className="fixed top-0 left-0 pointer-events-none z-[9999] rounded-full border-2 border-primary"
       animate={{
-        x: pos.x - (hovering ? 16 : 6),
-        y: pos.y - (hovering ? 16 : 6),
-        width: hovering ? 32 : 12,
-        height: hovering ? 32 : 12,
-        opacity: 0.8,
+        x: pos.x - (hovering ? 20 : 8),
+        y: pos.y - (hovering ? 20 : 8),
+        width: hovering ? 40 : 16,
+        height: hovering ? 40 : 16,
+        opacity: hovering ? 0.8 : 0.4,
       }}
-      transition={{ type: "spring", stiffness: 500, damping: 28, mass: 0.5 }}
+      transition={{ type: "spring", stiffness: 400, damping: 28, mass: 0.5 }}
     />
   );
 };
