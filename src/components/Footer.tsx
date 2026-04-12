@@ -1,5 +1,5 @@
 import { Facebook, Instagram, Linkedin } from "lucide-react";
-import logoSaul from "@/assets/logo_saul.png";
+import logoSaul from "@/assets/logo_saul_transparent.png";
 
 const Footer = () => (
   <footer className="bg-foreground border-t border-background/10 py-12">

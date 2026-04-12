@@ -7,11 +7,11 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import FloatingCTA from "@/components/FloatingCTA";
-import CustomCursor from "@/components/CustomCursor";
+
 
 const Index = () => (
   <>
-    <CustomCursor />
+    
     <Navbar />
     <HeroSection />
     <ServicesSection />

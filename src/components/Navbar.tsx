@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import logoSaul from "@/assets/logo_saul.png";
+import logoSaul from "@/assets/logo_saul_transparent.png";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [lang, setLang] = useState<"ET" | "RU">("ET");
+  const [lang, setLang] = useState<"ET" | "EN" | "RU">("ET");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
@@ -55,22 +55,17 @@ const Navbar = () => {
             ))}
 
             <div className="flex items-center gap-1 text-sm text-muted-foreground border border-border rounded-full px-2 py-1">
-              <button
-                onClick={() => setLang("ET")}
-                className={`px-2 py-0.5 rounded-full transition-all text-xs font-medium ${
-                  lang === "ET" ? "bg-foreground text-background" : "hover:text-foreground"
-                }`}
-              >
-                ET
-              </button>
-              <button
-                onClick={() => setLang("RU")}
-                className={`px-2 py-0.5 rounded-full transition-all text-xs font-medium ${
-                  lang === "RU" ? "bg-foreground text-background" : "hover:text-foreground"
-                }`}
-              >
-                RU
-              </button>
+              {(["ET", "EN", "RU"] as const).map((l) => (
+                <button
+                  key={l}
+                  onClick={() => setLang(l)}
+                  className={`px-2 py-0.5 rounded-full transition-all text-xs font-medium ${
+                    lang === l ? "bg-foreground text-background" : "hover:text-foreground"
+                  }`}
+                >
+                  {l}
+                </button>
+              ))}
             </div>
 
             <a
