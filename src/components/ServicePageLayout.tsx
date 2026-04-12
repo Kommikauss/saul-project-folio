@@ -1,18 +1,19 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Phone, Clock, MessageSquare, Home, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import type { LucideIcon } from "lucide-react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import FloatingCTA from "./FloatingCTA";
 
 interface ServiceItem {
-  icon: React.ComponentType<{ size?: number; className?: string }>;
+  icon: LucideIcon;
   title: string;
   desc: string;
 }
 
 interface WhyItem {
-  icon: React.ComponentType<{ size?: number; className?: string }>;
+  icon: LucideIcon;
   title: string;
   desc: string;
 }
