@@ -46,7 +46,7 @@ const ServicesSection = () => {
             >
               {service.highlight && (
                 <span className="absolute top-4 right-4 bg-primary text-primary-foreground text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">
-                  Eriti oluline
+                  UUS
                 </span>
               )}
 
