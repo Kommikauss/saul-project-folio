@@ -14,10 +14,12 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const isHome = typeof window !== "undefined" && window.location.pathname === "/";
+
   const navLinks = [
-    { label: "Teenused", href: "#teenused" },
-    { label: "Meist", href: "#meist" },
-    { label: "Kontakt", href: "#kontakt" },
+    { label: "Teenused", href: isHome ? "#teenused" : "/#teenused" },
+    { label: "Meist", href: isHome ? "#meist" : "/#meist" },
+    { label: "Kontakt", href: isHome ? "#kontakt" : "/#kontakt" },
   ];
 
   return (

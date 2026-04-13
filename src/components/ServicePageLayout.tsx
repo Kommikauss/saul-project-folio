@@ -63,14 +63,14 @@ const ServicePageLayout = ({
       </div>
 
       {/* Hero */}
-      <section className="bg-background pb-16 lg:pb-24">
+      <section className="bg-background pb-8 lg:pb-12">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
-              className="py-8 lg:py-16"
+              className="py-4 lg:py-8"
             >
               <h1 className="font-heading font-extrabold text-3xl sm:text-4xl md:text-5xl leading-[1.1] tracking-tight mb-6 text-foreground">
                 {title}
@@ -133,7 +133,7 @@ const ServicePageLayout = ({
       </section>
 
       {/* Services detail */}
-      <section className="py-20 lg:py-28 bg-background">
+      <section className="py-12 lg:py-16 bg-background">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
