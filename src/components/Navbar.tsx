@@ -1,12 +1,15 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 import logoSaul from "@/assets/logo_saul_new.png";
+import { useLanguage } from "@/i18n/LanguageContext";
+import type { Language } from "@/i18n/translations";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [lang, setLang] = useState<"ET" | "EN" | "RU">("ET");
+  const { lang, setLang, t } = useLanguage();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
@@ -17,9 +20,9 @@ const Navbar = () => {
   const isHome = typeof window !== "undefined" && window.location.pathname === "/";
 
   const navLinks = [
-    { label: "Teenused", href: isHome ? "#teenused" : "/#teenused" },
-    { label: "Meist", href: isHome ? "#meist" : "/#meist" },
-    { label: "Kontakt", href: isHome ? "#kontakt" : "/#kontakt" },
+    { label: t("nav.services"), href: isHome ? "#teenused" : "/#teenused" },
+    { label: t("nav.about"), href: isHome ? "#meist" : "/#meist" },
+    { label: t("nav.contact"), href: isHome ? "#kontakt" : "/#kontakt" },
   ];
 
   return (
@@ -35,13 +38,13 @@ const Navbar = () => {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-16 lg:h-20">
-          <a href="/" className="flex items-center gap-2">
+          <Link to="/" className="flex items-center gap-2">
             <img src={logoSaul} alt="Saul Project" className="h-8 lg:h-10" />
             <span className="text-xl font-heading font-bold tracking-tight">
               <span className="text-foreground">Saul</span>{" "}
               <span className="text-primary">Project</span>
             </span>
-          </a>
+          </Link>
 
           <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
@@ -69,12 +72,12 @@ const Navbar = () => {
               ))}
             </div>
 
-            <a
-              href="mailto:info@saulproject.ee"
+            <Link
+              to="/kuesi-pakkumist"
               className="bg-foreground text-background px-6 py-2.5 rounded-lg text-sm font-semibold hover:bg-primary hover:text-primary-foreground transition-all duration-300"
             >
-              Küsi pakkumist
-            </a>
+              {t("nav.cta")}
+            </Link>
           </div>
 
           <button
@@ -108,16 +111,19 @@ const Navbar = () => {
                 {link.label}
               </motion.a>
             ))}
-            <motion.a
-              href="mailto:info@saulproject.ee"
-              onClick={() => setMobileOpen(false)}
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
-              className="bg-foreground text-background px-6 py-3 rounded-lg text-lg font-semibold w-fit mt-4"
             >
-              Küsi pakkumist
-            </motion.a>
+              <Link
+                to="/kuesi-pakkumist"
+                onClick={() => setMobileOpen(false)}
+                className="bg-foreground text-background px-6 py-3 rounded-lg text-lg font-semibold w-fit mt-4 inline-block"
+              >
+                {t("nav.cta")}
+              </Link>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

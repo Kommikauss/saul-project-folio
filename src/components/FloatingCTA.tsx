@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const FloatingCTA = () => {
+  const { t } = useLanguage();
   const [visible, setVisible] = useState(false);
   const [dismissed, setDismissed] = useState(false);
 
@@ -25,14 +28,14 @@ const FloatingCTA = () => {
           className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-foreground/95 backdrop-blur-md border border-background/10 rounded-2xl px-6 py-3 flex items-center gap-4 shadow-2xl"
         >
           <span className="text-background text-sm font-medium hidden sm:block">
-            Soovid pakkumist?
+            {t("floatingCta.text")}
           </span>
-          <a
-            href="mailto:info@saulproject.ee"
+          <Link
+            to="/kuesi-pakkumist"
             className="bg-primary text-primary-foreground px-5 py-2 rounded-lg text-sm font-semibold hover:brightness-110 transition-all inline-flex items-center gap-1.5"
           >
-            Küsi pakkumist <ArrowRight size={14} />
-          </a>
+            {t("floatingCta.cta")} <ArrowRight size={14} />
+          </Link>
           <button
             onClick={() => { setDismissed(true); setVisible(false); }}
             className="text-background/40 hover:text-background transition-colors"
