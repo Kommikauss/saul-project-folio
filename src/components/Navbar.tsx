@@ -14,10 +14,12 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const isHome = typeof window !== "undefined" && window.location.pathname === "/";
+
   const navLinks = [
-    { label: "Teenused", href: "#teenused" },
-    { label: "Meist", href: "#meist" },
-    { label: "Kontakt", href: "#kontakt" },
+    { label: "Teenused", href: isHome ? "#teenused" : "/#teenused" },
+    { label: "Meist", href: isHome ? "#meist" : "/#meist" },
+    { label: "Kontakt", href: isHome ? "#kontakt" : "/#kontakt" },
   ];
 
   return (
@@ -33,7 +35,7 @@ const Navbar = () => {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-16 lg:h-20">
-          <a href="#" className="flex items-center gap-2">
+          <a href="/" className="flex items-center gap-2">
             <img src={logoSaul} alt="Saul Project" className="h-8 lg:h-10" />
             <span className="text-xl font-heading font-bold tracking-tight">
               <span className="text-foreground">Saul</span>{" "}
