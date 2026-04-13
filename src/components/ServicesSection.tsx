@@ -1,17 +1,20 @@
 import { motion } from "framer-motion";
 import { Home, Building2, Wrench, Zap, Droplets, BatteryCharging, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-
-const services = [
-  { icon: Home, title: "Eraisikutele", desc: "Korterite ja kodude remont", detail: "Täielik või osaline remont — planeerimisest viimistluseni.", href: "/eraisikutele" },
-  { icon: Building2, title: "Korteriühistutele", desc: "Usaldusväärne partner üldtöödeks", detail: "Fassaadid, trepikojad, katused ja tehnosüsteemid.", href: "/korteruhistutele" },
-  { icon: Wrench, title: "Hooldus ja remont", desc: "Kiire reageerimine, selge suhtlus", detail: "Igapäevased remonditööd ja tehniline hooldus.", href: "/hooldus-ja-remont" },
-  { icon: Zap, title: "Elektritööd", desc: "Paigaldus ja hooldus", detail: "Elektripaigaldised, valgustus ja juhtmestik.", href: "/elektritood" },
-  { icon: Droplets, title: "Torutööd", desc: "Vee- ja kanalisatsioonitööd", detail: "Torustike paigaldus, remont ja hooldus.", href: "/torutood" },
-  { icon: BatteryCharging, title: "EV laadimistaristu", desc: "Projekteerimine ja ehitus", detail: "Laadijate paigaldus kortermajadele ja äripindadele.", highlight: true, href: "/ev-laadimine" },
-];
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const ServicesSection = () => {
+  const { t } = useLanguage();
+
+  const services = [
+    { icon: Home, title: t("services.eraisikutele"), desc: t("services.eraisikuteleDesc"), detail: t("services.eraisikuteleDetail"), href: "/eraisikutele" },
+    { icon: Building2, title: t("services.korteruhistutele"), desc: t("services.korteruhistuteleDesc"), detail: t("services.korteruhistuteleDetail"), href: "/korteruhistutele" },
+    { icon: Wrench, title: t("services.hooldus"), desc: t("services.hooldusDesc"), detail: t("services.hooldusDetail"), href: "/hooldus-ja-remont" },
+    { icon: Zap, title: t("services.elektritood"), desc: t("services.elektritoodDesc"), detail: t("services.elektritoodDetail"), href: "/elektritood" },
+    { icon: Droplets, title: t("services.torutood"), desc: t("services.torutoodDesc"), detail: t("services.torutoodDetail"), href: "/torutood" },
+    { icon: BatteryCharging, title: t("services.ev"), desc: t("services.evDesc"), detail: t("services.evDetail"), highlight: true, href: "/ev-laadimine" },
+  ];
+
   return (
     <section id="teenused" className="py-24 lg:py-32 bg-background">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
@@ -23,10 +26,10 @@ const ServicesSection = () => {
           className="text-center mb-16"
         >
           <h2 className="font-heading font-extrabold text-3xl md:text-5xl text-foreground mb-4">
-            Meie teenused
+            {t("services.title")}
           </h2>
           <p className="text-muted-foreground text-lg max-w-xl mx-auto">
-            Kõik ehitus- ja remonditööd ühest kohast — professionaalselt ja õigeaegselt.
+            {t("services.subtitle")}
           </p>
         </motion.div>
 
@@ -50,7 +53,7 @@ const ServicesSection = () => {
               >
                 {service.highlight && (
                   <span className="absolute top-4 right-4 bg-primary text-primary-foreground text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">
-                    UUS
+                    {t("services.new")}
                   </span>
                 )}
 
@@ -69,7 +72,7 @@ const ServicesSection = () => {
                 <p className="text-muted-foreground/70 text-sm leading-relaxed mb-4">{service.detail}</p>
 
                 <span className="inline-flex items-center gap-1 text-primary text-sm font-semibold opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-0 group-hover:translate-x-1">
-                  Loe lähemalt <ArrowRight size={14} />
+                  {t("services.readMore")} <ArrowRight size={14} />
                 </span>
               </Link>
             </motion.div>

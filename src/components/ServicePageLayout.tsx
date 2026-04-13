@@ -6,6 +6,7 @@ import type { LucideIcon } from "lucide-react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import FloatingCTA from "./FloatingCTA";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 interface ServiceItem {
   icon: LucideIcon;
@@ -42,6 +43,7 @@ const ServicePageLayout = ({
   ctaTitle,
   ctaSubtitle,
 }: ServicePageLayoutProps) => {
+  const { t } = useLanguage();
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
   return (
@@ -54,7 +56,7 @@ const ServicePageLayout = ({
           <nav className="flex items-center gap-2 text-sm text-muted-foreground">
             <Link to="/" className="hover:text-foreground transition-colors flex items-center gap-1">
               <Home size={14} />
-              Avaleht
+              {t("servicePages.home")}
             </Link>
             <ChevronRight size={14} />
             <span className="text-foreground font-medium">{breadcrumb}</span>
@@ -80,12 +82,12 @@ const ServicePageLayout = ({
               </p>
 
               <div className="flex flex-wrap gap-4 mb-10">
-                <a
-                  href="mailto:info@saulproject.ee"
+                <Link
+                  to="/kuesi-pakkumist"
                   className="bg-foreground text-background px-8 py-4 rounded-lg font-heading font-bold text-base hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
                 >
-                  Küsi pakkumist
-                </a>
+                  {t("servicePages.cta")}
+                </Link>
                 <a
                   href="tel:+3725555123"
                   className="border-2 border-foreground text-foreground px-8 py-4 rounded-lg font-heading font-semibold text-base hover:bg-foreground hover:text-background transition-all duration-300 inline-flex items-center gap-2"
@@ -100,13 +102,13 @@ const ServicePageLayout = ({
                   <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
                     <Clock size={14} className="text-primary" />
                   </div>
-                  <span className="font-medium">Aastatepikkune kogemus</span>
+                  <span className="font-medium">{t("servicePages.yearsExperience")}</span>
                 </div>
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
                   <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
                     <MessageSquare size={14} className="text-primary" />
                   </div>
-                  <span className="font-medium">Selge kommunikatsioon</span>
+                  <span className="font-medium">{t("servicePages.clearComm")}</span>
                 </div>
               </div>
             </motion.div>
@@ -118,13 +120,7 @@ const ServicePageLayout = ({
               className="relative hidden lg:block"
             >
               <div className="relative rounded-2xl overflow-hidden aspect-[4/3]">
-                <img
-                  src={heroImage}
-                  alt={title}
-                  className="w-full h-full object-cover"
-                  width={1280}
-                  height={960}
-                />
+                <img src={heroImage} alt={title} className="w-full h-full object-cover" width={1280} height={960} />
                 <div className="absolute inset-0 bg-gradient-to-t from-foreground/10 to-transparent" />
               </div>
             </motion.div>
@@ -143,7 +139,7 @@ const ServicePageLayout = ({
             className="text-center mb-14"
           >
             <h2 className="font-heading font-extrabold text-2xl md:text-4xl text-foreground mb-4">
-              Meie teenused
+              {t("servicePages.ourServices")}
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">{servicesIntro}</p>
           </motion.div>
@@ -165,7 +161,7 @@ const ServicePageLayout = ({
                 <h3 className="font-heading font-bold text-lg text-foreground mb-2">{s.title}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">{s.desc}</p>
                 <span className="inline-flex items-center gap-1 text-primary text-sm font-semibold opacity-0 group-hover:opacity-100 transition-all duration-300">
-                  Loe lähemalt <ArrowRight size={14} />
+                  {t("servicePages.readMore")} <ArrowRight size={14} />
                 </span>
               </motion.div>
             ))}
@@ -184,10 +180,10 @@ const ServicePageLayout = ({
             className="text-center mb-14"
           >
             <h2 className="font-heading font-extrabold text-2xl md:text-4xl text-foreground mb-4">
-              Miks valida meid?
+              {t("servicePages.whyUs")}
             </h2>
             <p className="text-muted-foreground text-lg">
-              Võta ühendust — aitame kiirelt lahenduse leida!
+              {t("servicePages.whyUsSubtitle")}
             </p>
           </motion.div>
 
@@ -199,12 +195,12 @@ const ServicePageLayout = ({
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.12, duration: 0.5 }}
-                className="bg-background rounded-2xl border border-border p-7 text-center hover:shadow-lg transition-all duration-300"
+                className="bg-background rounded-2xl border border-border p-7 text-center hover:shadow-lg transition-all duration-300 overflow-visible"
               >
                 <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-5">
                   <w.icon size={24} className="text-primary" />
                 </div>
-                <h3 className="font-heading font-bold text-base text-foreground mb-2">{w.title}</h3>
+                <h3 className="font-heading font-bold text-base text-foreground mb-2 leading-normal">{w.title}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">{w.desc}</p>
               </motion.div>
             ))}
@@ -221,12 +217,12 @@ const ServicePageLayout = ({
             </h2>
             <p className="text-background/60">{ctaSubtitle}</p>
           </div>
-          <a
-            href="mailto:info@saulproject.ee"
+          <Link
+            to="/kuesi-pakkumist"
             className="bg-primary text-primary-foreground px-10 py-4 rounded-lg font-heading font-bold text-lg hover:brightness-110 transition-all inline-flex items-center gap-2 whitespace-nowrap"
           >
-            Küsi pakkumist <ArrowRight size={18} />
-          </a>
+            {t("servicePages.cta")} <ArrowRight size={18} />
+          </Link>
         </div>
       </section>
 

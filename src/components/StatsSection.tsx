@@ -1,12 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
-
-const stats = [
-  { value: 200, suffix: "+", label: "Lõpetatud projekti" },
-  { value: 8, suffix: "+", label: "Aastat kogemust" },
-  { value: 24, suffix: "h", label: "Vastamisaeg" },
-  { value: 100, suffix: "%", label: "Rahulolev klient" },
-];
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const Counter = ({ target, suffix }: { target: number; suffix: string }) => {
   const [count, setCount] = useState(0);
@@ -38,26 +32,37 @@ const Counter = ({ target, suffix }: { target: number; suffix: string }) => {
   );
 };
 
-const StatsSection = () => (
-  <section className="py-16 bg-background border-y border-border">
-    <div className="max-w-7xl mx-auto px-6 lg:px-10">
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-        {stats.map((stat, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.1, duration: 0.5 }}
-            className="text-center"
-          >
-            <Counter target={stat.value} suffix={stat.suffix} />
-            <p className="text-muted-foreground text-sm mt-2 font-medium">{stat.label}</p>
-          </motion.div>
-        ))}
+const StatsSection = () => {
+  const { t } = useLanguage();
+
+  const stats = [
+    { value: 200, suffix: "+", label: t("stats.projects") },
+    { value: 8, suffix: "+", label: t("stats.years") },
+    { value: 24, suffix: "h", label: t("stats.response") },
+    { value: 100, suffix: "%", label: t("stats.satisfaction") },
+  ];
+
+  return (
+    <section className="py-16 bg-background border-y border-border">
+      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+          {stats.map((stat, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1, duration: 0.5 }}
+              className="text-center"
+            >
+              <Counter target={stat.value} suffix={stat.suffix} />
+              <p className="text-muted-foreground text-sm mt-2 font-medium">{stat.label}</p>
+            </motion.div>
+          ))}
+        </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 export default StatsSection;
