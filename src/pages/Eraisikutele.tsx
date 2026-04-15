@@ -1,9 +1,17 @@
 import { Home, Paintbrush, Layers, Wrench } from "lucide-react";
 import { CheckCircle, Clock, MessageSquare } from "lucide-react";
+import SEO from "@/components/SEO";
 import ServicePageLayout from "@/components/ServicePageLayout";
 import heroImg from "@/assets/service-eraisikutele.jpg";
 
 const Eraisikutele = () => (
+  <>
+  <SEO
+    title="Korterite ja kodude remont"
+    description="Korterite ja kodude remont — täielik või osaline remont, sisetööd, viimistlus, põrandad, värvimine. Kiiresti, korrektselt ja kokkulepitud ajaga."
+    path="/eraisikutele"
+    keywords="korteri remont, kodu remont, sisetööd, viimistlus, põrandatööd, värvimine, plaatimine, Eesti"
+  />
   <ServicePageLayout
     title="Korterite ja kodude remont"
     subtitle="Teostame remonditöid kiiresti, korrektselt ja kokkulepitud ajaga. Sinu kodu uueneb meie käe all — kvaliteetselt ja muretult."
@@ -23,6 +31,7 @@ const Eraisikutele = () => (
     ctaTitle="Vajad kodu remonti?"
     ctaSubtitle="Võta ühendust — aitame leida parima lahenduse!"
   />
+  </>
 );
 
 export default Eraisikutele;

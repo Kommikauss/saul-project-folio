@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle, Home, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import SEO from "@/components/SEO";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useLanguage } from "@/i18n/LanguageContext";
@@ -64,6 +65,11 @@ const QuotePage = () => {
   if (submitted) {
     return (
       <>
+        <SEO
+          title="Pakkumine saadetud"
+          description="Teie pakkumise taotlus on edukalt saadetud. Võtame teiega ühendust 24 tunni jooksul."
+          path="/pakkumine"
+        />
         <Navbar />
         <div className="min-h-screen flex items-center justify-center bg-background pt-20">
           <motion.div
@@ -95,6 +101,12 @@ const QuotePage = () => {
 
   return (
     <>
+      <SEO
+        title="Küsi pakkumist"
+        description="Küsi tasuta pakkumist remondi-, elektri-, toru- või hooldustöödeks. Täida vorm ja võtame teiega ühendust 24 tunni jooksul."
+        path="/pakkumine"
+        keywords="pakkumine, hinnapakkumine, tasuta pakkumine, remont, elektritööd, torutööd, Eesti"
+      />
       <Navbar />
 
       {/* Breadcrumb */}

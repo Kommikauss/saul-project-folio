@@ -1,9 +1,17 @@
 import { Building2, Hammer, FileText } from "lucide-react";
 import { CheckCircle, Clock, MessageSquare } from "lucide-react";
+import SEO from "@/components/SEO";
 import ServicePageLayout from "@/components/ServicePageLayout";
 import heroImg from "@/assets/service-korteruhistu.jpg";
 
 const Korteruhistutele = () => (
+  <>
+  <SEO
+    title="Korteriühistutele"
+    description="Teenused korteriühistutele — regulaarne hooldus, kiire väljakutse, remonditööd ja hoolduslepingud. Usaldusväärne partner teie majale."
+    path="/korteruhistutele"
+    keywords="korteriühistu, korteriühistu teenused, hoolduslepingud, maja hooldus, remonditööd, Eesti"
+  />
   <ServicePageLayout
     title="Korteriühistutele"
     subtitle="Pakume korteriühistutele regulaarseid hooldusteenuseid, kiiret väljakutset, väiksematteks remonttöödeks ja lepinguid."
@@ -23,6 +31,7 @@ const Korteruhistutele = () => (
     ctaTitle="Vajad väiksemat remonditööd?"
     ctaSubtitle="Võta ühendust — aitame kiirelt lahenduse leida."
   />
+  </>
 );
 
 export default Korteruhistutele;

@@ -1,9 +1,17 @@
 import { Droplets, Wrench, RefreshCw } from "lucide-react";
 import { CheckCircle, Clock, MessageSquare } from "lucide-react";
+import SEO from "@/components/SEO";
 import ServicePageLayout from "@/components/ServicePageLayout";
 import heroImg from "@/assets/service-torutood.jpg";
 
 const Torutood = () => (
+  <>
+  <SEO
+    title="Torutööd"
+    description="Professionaalsed torutööd korterites ja korteriühistutes. Torude paigaldus, lekete parandamine, veetorustike uuendamine. Kiire reageerimine."
+    path="/torutood"
+    keywords="torutööd, torude paigaldus, lekete parandamine, veetorustik, sanitaartehnilised tööd, Eesti"
+  />
   <ServicePageLayout
     title="Torutööd"
     subtitle="Pakume korterite ja korteriühistute torutöid professionaalselt ja usaldusväärselt."
@@ -23,6 +31,7 @@ const Torutood = () => (
     ctaTitle="Vajate torumeest?"
     ctaSubtitle="Võta ühendust — aitame kiirelt lahenduse leida."
   />
+  </>
 );
 
 export default Torutood;

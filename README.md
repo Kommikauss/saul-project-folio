@@ -1,3 +1,3 @@
-# Welcome to your Lovable project
+# Saul Project
 
-TODO: Document your project here
+Website for Saul Project OÜ — renovation, electrical, plumbing, and maintenance services in Estonia.

@@ -1,9 +1,17 @@
 import { Zap, Cable, LayoutGrid } from "lucide-react";
 import { CheckCircle, Clock, MessageSquare } from "lucide-react";
+import SEO from "@/components/SEO";
 import ServicePageLayout from "@/components/ServicePageLayout";
 import heroImg from "@/assets/service-elektritood.jpg";
 
 const Elektritood = () => (
+  <>
+  <SEO
+    title="Elektritööd"
+    description="Professionaalsed elektritööd korterites ja korteriühistutes. Elektri paigaldus, kaablite vedamine, kilpide uuendamine. Kiire ja usaldusväärne teenus."
+    path="/elektritood"
+    keywords="elektritööd, elektri paigaldus, kaablite vedamine, elektrikilbid, korteri elektritööd, Eesti"
+  />
   <ServicePageLayout
     title="Elektritööd"
     subtitle="Pakume korterite ja korteriühistute elektritöid professionaalselt ja usaldusväärselt."
@@ -23,6 +31,7 @@ const Elektritood = () => (
     ctaTitle="Vajate elektritööd?"
     ctaSubtitle="Võta ühendust — aitame kiirelt lahenduse leida."
   />
+  </>
 );
 
 export default Elektritood;

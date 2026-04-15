@@ -1,9 +1,17 @@
 import { Wrench, Zap, FileText } from "lucide-react";
 import { CheckCircle, Clock, MessageSquare } from "lucide-react";
+import SEO from "@/components/SEO";
 import ServicePageLayout from "@/components/ServicePageLayout";
 import heroImg from "@/assets/service-hooldus.jpg";
 
 const HooldusJaRemont = () => (
+  <>
+  <SEO
+    title="Hooldus ja remont"
+    description="Kiire reageerimine ja hoolduslepingud korteriühistutele. Väiksemad remonditööd, avariitööd ja regulaarne hooldus."
+    path="/hooldus-ja-remont"
+    keywords="hooldus, remont, korteriühistu hooldus, hoolduslepingud, avariitööd, kiire reageerimine, Eesti"
+  />
   <ServicePageLayout
     title="Hooldus ja väiksemad remonditööd"
     subtitle="Pakume kiret reageerimist, väiksemate remonttööde tegemist ja hoolduslepinguid korteriühistutele."
@@ -23,6 +31,7 @@ const HooldusJaRemont = () => (
     ctaTitle="Vajad väiksemat remonditööd?"
     ctaSubtitle="Võta ühendust — aitame kiirelt lahenduse leida."
   />
+  </>
 );
 
 export default HooldusJaRemont;
