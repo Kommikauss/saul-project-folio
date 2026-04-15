@@ -31,7 +31,7 @@ const ContactSection = () => {
               {t("contact.subtitle")}
             </p>
             <Link
-              to="/kuesi-pakkumist"
+              to="/pakkumine"
               className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-lg font-heading font-bold text-base hover:brightness-110 transition-all duration-300 hover:gap-3 group"
             >
               {t("contact.cta")}
