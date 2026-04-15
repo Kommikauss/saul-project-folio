@@ -29,12 +29,15 @@ const Footer = () => {
               <a href="/#teenused" className="text-background/50 text-sm hover:text-primary transition-colors">
                 {t("footer.services")}
               </a>
-              <a href="/#teenused" className="text-background/50 text-sm hover:text-primary transition-colors">
-                {t("footer.private")}
+              <a href="/#miks-meie" className="text-background/50 text-sm hover:text-primary transition-colors">
+                {t("footer.about")}
               </a>
               <a href="/#kontakt" className="text-background/50 text-sm hover:text-primary transition-colors">
                 {t("footer.contact")}
               </a>
+              <Link to="/pakkumine" className="text-background/50 text-sm hover:text-primary transition-colors">
+                {t("footer.quote")}
+              </Link>
             </div>
           </div>
 
@@ -43,7 +46,6 @@ const Footer = () => {
             <div className="flex flex-col gap-2 text-background/50 text-sm">
               <span>📞 +372 5555 1234</span>
               <span>✉️ info@saulproject.ee</span>
-              <span>📍 {t("contact.address")}</span>
             </div>
             <div className="flex gap-3 mt-4">
               {[Facebook, Instagram, Linkedin].map((Icon, i) => (
