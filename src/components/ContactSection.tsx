@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Phone, Mail, MapPin, ArrowRight } from "lucide-react";
+import { Phone, Mail, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/i18n/LanguageContext";
 
@@ -57,15 +57,6 @@ const ContactSection = () => {
                 <span className="text-lg font-medium">{item.text}</span>
               </a>
             ))}
-            <div className="flex items-center gap-4 text-background/70">
-              <div className="w-12 h-12 rounded-xl border border-background/20 flex items-center justify-center">
-                <MapPin size={18} />
-              </div>
-              <div>
-                <span className="text-lg font-medium block">Saul Project</span>
-                <span className="text-background/50 text-sm">{t("contact.address")}</span>
-              </div>
-            </div>
           </motion.div>
         </div>
       </div>
