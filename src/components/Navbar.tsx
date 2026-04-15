@@ -73,7 +73,7 @@ const Navbar = () => {
             </div>
 
             <Link
-              to="/kuesi-pakkumist"
+              to="/pakkumine"
               className="bg-foreground text-background px-6 py-2.5 rounded-lg text-sm font-semibold hover:bg-primary hover:text-primary-foreground transition-all duration-300"
             >
               {t("nav.cta")}
@@ -117,7 +117,7 @@ const Navbar = () => {
               transition={{ delay: 0.5 }}
             >
               <Link
-                to="/kuesi-pakkumist"
+                to="/pakkumine"
                 onClick={() => setMobileOpen(false)}
                 className="bg-foreground text-background px-6 py-3 rounded-lg text-lg font-semibold w-fit mt-4 inline-block"
               >

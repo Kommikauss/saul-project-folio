@@ -39,7 +39,7 @@ const WhyUsSection = () => {
               viewport={{ once: true }}
               transition={{ delay: i * 0.12, duration: 0.5 }}
               whileHover={{ y: -4 }}
-              className="bg-background rounded-2xl border border-border p-7 text-center hover:shadow-lg transition-all duration-300 group overflow-visible"
+              className="bg-background rounded-2xl border border-border p-7 pb-8 text-center hover:shadow-lg transition-all duration-300 group overflow-visible"
             >
               <motion.div
                 animate={{ scale: [1, 1.05, 1] }}
@@ -48,7 +48,7 @@ const WhyUsSection = () => {
               >
                 <v.icon size={24} className="text-primary" />
               </motion.div>
-              <h3 className="font-heading font-bold text-base text-foreground mb-2 leading-normal">
+              <h3 className="font-heading font-bold text-base text-foreground mb-2 leading-loose">
                 {v.title}
               </h3>
               <p className="text-muted-foreground text-sm leading-relaxed">

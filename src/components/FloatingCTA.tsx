@@ -31,7 +31,7 @@ const FloatingCTA = () => {
             {t("floatingCta.text")}
           </span>
           <Link
-            to="/kuesi-pakkumist"
+            to="/pakkumine"
             className="bg-primary text-primary-foreground px-5 py-2 rounded-lg text-sm font-semibold hover:brightness-110 transition-all inline-flex items-center gap-1.5"
           >
             {t("floatingCta.cta")} <ArrowRight size={14} />

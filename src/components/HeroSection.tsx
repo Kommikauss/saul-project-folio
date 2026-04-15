@@ -46,7 +46,7 @@ const HeroSection = () => {
               className="flex flex-wrap gap-4 mb-10"
             >
               <Link
-                to="/kuesi-pakkumist"
+                to="/pakkumine"
                 className="bg-foreground text-background px-8 py-4 rounded-lg font-heading font-bold text-base hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
               >
                 {t("hero.cta")}

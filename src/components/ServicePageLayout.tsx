@@ -83,7 +83,7 @@ const ServicePageLayout = ({
 
               <div className="flex flex-wrap gap-4 mb-10">
                 <Link
-                  to="/kuesi-pakkumist"
+                  to="/pakkumine"
                   className="bg-foreground text-background px-8 py-4 rounded-lg font-heading font-bold text-base hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
                 >
                   {t("servicePages.cta")}
@@ -159,10 +159,7 @@ const ServicePageLayout = ({
                   <s.icon size={22} />
                 </div>
                 <h3 className="font-heading font-bold text-lg text-foreground mb-2">{s.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed mb-4">{s.desc}</p>
-                <span className="inline-flex items-center gap-1 text-primary text-sm font-semibold opacity-0 group-hover:opacity-100 transition-all duration-300">
-                  {t("servicePages.readMore")} <ArrowRight size={14} />
-                </span>
+                <p className="text-muted-foreground text-sm leading-relaxed">{s.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -195,12 +192,12 @@ const ServicePageLayout = ({
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.12, duration: 0.5 }}
-                className="bg-background rounded-2xl border border-border p-7 text-center hover:shadow-lg transition-all duration-300 overflow-visible"
+                className="bg-background rounded-2xl border border-border p-7 pb-8 text-center hover:shadow-lg transition-all duration-300 overflow-visible"
               >
                 <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-5">
                   <w.icon size={24} className="text-primary" />
                 </div>
-                <h3 className="font-heading font-bold text-base text-foreground mb-2 leading-normal">{w.title}</h3>
+                <h3 className="font-heading font-bold text-base text-foreground mb-2 leading-loose">{w.title}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">{w.desc}</p>
               </motion.div>
             ))}
@@ -218,7 +215,7 @@ const ServicePageLayout = ({
             <p className="text-background/60">{ctaSubtitle}</p>
           </div>
           <Link
-            to="/kuesi-pakkumist"
+            to="/pakkumine"
             className="bg-primary text-primary-foreground px-10 py-4 rounded-lg font-heading font-bold text-lg hover:brightness-110 transition-all inline-flex items-center gap-2 whitespace-nowrap"
           >
             {t("servicePages.cta")} <ArrowRight size={18} />
