@@ -192,12 +192,12 @@ const ServicePageLayout = ({
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.12, duration: 0.5 }}
-                className="bg-background rounded-2xl border border-border p-7 text-center hover:shadow-lg transition-all duration-300 overflow-visible"
+                className="bg-background rounded-2xl border border-border p-7 pb-8 text-center hover:shadow-lg transition-all duration-300 overflow-visible"
               >
                 <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-5">
                   <w.icon size={24} className="text-primary" />
                 </div>
-                <h3 className="font-heading font-bold text-base text-foreground mb-2 leading-normal">{w.title}</h3>
+                <h3 className="font-heading font-bold text-base text-foreground mb-2 leading-loose">{w.title}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">{w.desc}</p>
               </motion.div>
             ))}
