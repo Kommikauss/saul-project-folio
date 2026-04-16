@@ -11,12 +11,8 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="grid md:grid-cols-3 gap-10 mb-10">
           <div>
-            <div className="flex items-center gap-2 mb-3">
-              <img src={logoSaul} alt="Saul Project" className="h-8 brightness-0 invert" />
-              <span className="text-xl font-heading font-bold">
-                <span className="text-background">Saul</span>{" "}
-                <span className="text-primary">Project</span>
-              </span>
+            <div className="flex items-center mb-3">
+              <img src={logoSaul} alt="Saul Project" className="h-9 brightness-0 invert" />
             </div>
             <p className="text-background/40 text-sm leading-relaxed">
               {t("footer.tagline")}
