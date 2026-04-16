@@ -14,10 +14,10 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="relative min-h-[90vh] flex items-center bg-background overflow-hidden pt-20">
+    <section className="relative min-h-[60vh] flex items-center bg-background overflow-hidden pt-20 pb-10">
       <div className="max-w-7xl mx-auto px-6 lg:px-10 w-full">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="relative z-10 py-16 lg:py-24">
+          <div className="relative z-10 py-8 lg:py-12">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -47,13 +47,13 @@ const HeroSection = () => {
             >
               <Link
                 to="/pakkumine"
-                className="bg-foreground text-background px-8 py-4 rounded-lg font-heading font-bold text-base hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+                className="bg-primary text-primary-foreground px-8 py-4 rounded-lg font-heading font-semibold text-base hover:bg-secondary transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
               >
                 {t("hero.cta")}
               </Link>
               <a
                 href="tel:+3725555123"
-                className="border-2 border-foreground text-foreground px-8 py-4 rounded-lg font-heading font-semibold text-base hover:bg-foreground hover:text-background transition-all duration-300"
+                className="border-2 border-primary text-primary px-8 py-4 rounded-lg font-heading font-medium text-base hover:bg-primary hover:text-primary-foreground transition-all duration-200"
               >
                 {t("hero.call")}: +372 5555 1234
               </a>
@@ -82,7 +82,7 @@ const HeroSection = () => {
             transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
             className="relative hidden lg:block"
           >
-            <div className="relative rounded-2xl overflow-hidden aspect-[4/5]">
+            <div className="relative rounded-2xl overflow-hidden aspect-[4/4]">
               <img src={heroBg} alt={t("hero.title1")} className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 to-transparent" />
             </div>
