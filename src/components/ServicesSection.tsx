@@ -3,16 +3,23 @@ import { Home, Building2, Wrench, Zap, Droplets, BatteryCharging, ArrowRight } f
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/i18n/LanguageContext";
 
+import imgEraisikutele from "@/assets/service-eraisikutele.jpg";
+import imgKorteruhistu from "@/assets/service-korteruhistu.jpg";
+import imgHooldus from "@/assets/service-hooldus.jpg";
+import imgElektri from "@/assets/service-elektri.jpg";
+import imgTorutood from "@/assets/service-torutood.jpg";
+import imgEv from "@/assets/service-ev.jpg";
+
 const ServicesSection = () => {
   const { t } = useLanguage();
 
   const services = [
-    { icon: Home, title: t("services.eraisikutele"), desc: t("services.eraisikuteleDesc"), detail: t("services.eraisikuteleDetail"), href: "/eraisikutele" },
-    { icon: Building2, title: t("services.korteruhistutele"), desc: t("services.korteruhistuteleDesc"), detail: t("services.korteruhistuteleDetail"), href: "/korteruhistutele" },
-    { icon: Wrench, title: t("services.hooldus"), desc: t("services.hooldusDesc"), detail: t("services.hooldusDetail"), href: "/hooldus-ja-remont" },
-    { icon: Zap, title: t("services.elektritood"), desc: t("services.elektritoodDesc"), detail: t("services.elektritoodDetail"), href: "/elektritood" },
-    { icon: Droplets, title: t("services.torutood"), desc: t("services.torutoodDesc"), detail: t("services.torutoodDetail"), href: "/torutood" },
-    { icon: BatteryCharging, title: t("services.ev"), desc: t("services.evDesc"), detail: t("services.evDetail"), highlight: true, href: "/ev-laadimine" },
+    { icon: Home, title: t("services.eraisikutele"), desc: t("services.eraisikuteleDesc"), detail: t("services.eraisikuteleDetail"), href: "/eraisikutele", img: imgEraisikutele },
+    { icon: Building2, title: t("services.korteruhistutele"), desc: t("services.korteruhistuteleDesc"), detail: t("services.korteruhistuteleDetail"), href: "/korteruhistutele", img: imgKorteruhistu },
+    { icon: Wrench, title: t("services.hooldus"), desc: t("services.hooldusDesc"), detail: t("services.hooldusDetail"), href: "/hooldus-ja-remont", img: imgHooldus },
+    { icon: Zap, title: t("services.elektritood"), desc: t("services.elektritoodDesc"), detail: t("services.elektritoodDetail"), href: "/elektritood", img: imgElektri },
+    { icon: Droplets, title: t("services.torutood"), desc: t("services.torutoodDesc"), detail: t("services.torutoodDetail"), href: "/torutood", img: imgTorutood },
+    { icon: BatteryCharging, title: t("services.ev"), desc: t("services.evDesc"), detail: t("services.evDetail"), highlight: true, href: "/ev-laadimine", img: imgEv },
   ];
 
   return (
@@ -25,7 +32,7 @@ const ServicesSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="font-heading font-extrabold text-3xl md:text-5xl text-foreground mb-4">
+          <h2 className="font-heading font-semibold text-3xl md:text-5xl text-foreground mb-4">
             {t("services.title")}
           </h2>
           <p className="text-muted-foreground text-lg max-w-xl mx-auto">
@@ -45,35 +52,51 @@ const ServicesSection = () => {
             >
               <Link
                 to={service.href}
-                className={`group relative rounded-2xl p-7 cursor-pointer transition-all duration-300 border block h-full ${
+                className={`group relative rounded-xl overflow-hidden cursor-pointer transition-all duration-300 border block h-full ${
                   service.highlight
-                    ? "bg-primary/5 border-primary/30 hover:bg-primary/10 hover:border-primary/50"
-                    : "bg-background border-border hover:border-primary/30 hover:shadow-lg"
+                    ? "border-primary/30 hover:border-primary/50 hover:shadow-lg"
+                    : "border-border hover:border-primary/30 hover:shadow-lg"
                 }`}
               >
-                {service.highlight && (
-                  <span className="absolute top-4 right-4 bg-primary text-primary-foreground text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">
-                    {t("services.new")}
-                  </span>
-                )}
-
-                <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-5 transition-all duration-300 ${
-                  service.highlight
-                    ? "bg-primary text-primary-foreground"
-                    : "bg-muted text-foreground group-hover:bg-primary group-hover:text-primary-foreground"
-                }`}>
-                  <service.icon size={22} />
+                {/* Image */}
+                <div className="relative h-40 overflow-hidden">
+                  <img
+                    src={service.img}
+                    alt={service.title}
+                    loading="lazy"
+                    width={768}
+                    height={512}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-foreground/40 to-transparent" />
+                  {service.highlight && (
+                    <span className="absolute top-3 right-3 bg-primary text-primary-foreground text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">
+                      {t("services.new")}
+                    </span>
+                  )}
                 </div>
 
-                <h3 className="font-heading font-bold text-lg text-foreground mb-2">
-                  {service.title}
-                </h3>
-                <p className="text-muted-foreground text-sm mb-3">{service.desc}</p>
-                <p className="text-muted-foreground/70 text-sm leading-relaxed mb-4">{service.detail}</p>
+                {/* Content */}
+                <div className="p-6 bg-card">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className={`w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300 ${
+                      service.highlight
+                        ? "bg-primary text-primary-foreground"
+                        : "bg-muted text-foreground group-hover:bg-primary group-hover:text-primary-foreground"
+                    }`}>
+                      <service.icon size={18} />
+                    </div>
+                    <h3 className="font-heading font-semibold text-lg text-foreground">
+                      {service.title}
+                    </h3>
+                  </div>
+                  <p className="text-muted-foreground text-sm mb-2">{service.desc}</p>
+                  <p className="text-muted-foreground/70 text-sm leading-relaxed mb-4">{service.detail}</p>
 
-                <span className="inline-flex items-center gap-1 text-primary text-sm font-semibold opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-0 group-hover:translate-x-1">
-                  {t("services.readMore")} <ArrowRight size={14} />
-                </span>
+                  <span className="inline-flex items-center gap-1 text-primary text-sm font-medium opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-0 group-hover:translate-x-1">
+                    {t("services.readMore")} <ArrowRight size={14} />
+                  </span>
+                </div>
               </Link>
             </motion.div>
           ))}
