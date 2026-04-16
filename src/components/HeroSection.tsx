@@ -47,13 +47,13 @@ const HeroSection = () => {
             >
               <Link
                 to="/pakkumine"
-                className="bg-foreground text-background px-8 py-4 rounded-lg font-heading font-bold text-base hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+                className="bg-primary text-primary-foreground px-8 py-4 rounded-lg font-heading font-semibold text-base hover:bg-secondary transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
               >
                 {t("hero.cta")}
               </Link>
               <a
                 href="tel:+3725555123"
-                className="border-2 border-foreground text-foreground px-8 py-4 rounded-lg font-heading font-semibold text-base hover:bg-foreground hover:text-background transition-all duration-300"
+                className="border-2 border-primary text-primary px-8 py-4 rounded-lg font-heading font-medium text-base hover:bg-primary hover:text-primary-foreground transition-all duration-200"
               >
                 {t("hero.call")}: +372 5555 1234
               </a>
