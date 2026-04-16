@@ -74,7 +74,7 @@ const Navbar = () => {
 
             <Link
               to="/pakkumine"
-              className="bg-foreground text-background px-6 py-2.5 rounded-lg text-sm font-semibold hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+              className="bg-primary text-primary-foreground px-6 py-2.5 rounded-lg text-sm font-medium hover:bg-secondary transition-all duration-200"
             >
               {t("nav.cta")}
             </Link>
@@ -119,7 +119,7 @@ const Navbar = () => {
               <Link
                 to="/pakkumine"
                 onClick={() => setMobileOpen(false)}
-                className="bg-foreground text-background px-6 py-3 rounded-lg text-lg font-semibold w-fit mt-4 inline-block"
+                className="bg-primary text-primary-foreground px-6 py-3 rounded-lg text-lg font-medium w-fit mt-4 inline-block"
               >
                 {t("nav.cta")}
               </Link>

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,39 +6,39 @@
 
 @layer base {
   :root {
-    --background: 40 20% 97%;
-    --foreground: 0 0% 7%;
+    --background: 120 7% 97%;
+    --foreground: 160 17% 14%;
 
-    --card: 40 20% 97%;
-    --card-foreground: 0 0% 7%;
+    --card: 0 0% 100%;
+    --card-foreground: 160 17% 14%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 7%;
+    --popover-foreground: 160 17% 14%;
 
-    --primary: 27 82% 53%;
+    --primary: 160 33% 27%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 160 20% 14%;
-    --secondary-foreground: 40 20% 97%;
+    --secondary: 160 33% 36%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 40 10% 92%;
-    --muted-foreground: 0 0% 40%;
+    --muted: 150 12% 91%;
+    --muted-foreground: 165 8% 45%;
 
-    --accent: 27 82% 53%;
+    --accent: 160 33% 36%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 40 10% 88%;
-    --input: 40 10% 88%;
-    --ring: 27 82% 53%;
+    --border: 150 12% 91%;
+    --input: 150 12% 88%;
+    --ring: 160 33% 27%;
 
     --radius: 0.5rem;
 
-    --dark-bg: 0 0% 7%;
-    --dark-forest: 150 22% 14%;
-    --off-white: 40 20% 97%;
+    --dark-bg: 168 15% 20%;
+    --dark-forest: 160 17% 14%;
+    --off-white: 120 7% 97%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -72,7 +72,7 @@
 @layer utilities {
   .text-gradient {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(var(--primary)), hsl(27 90% 62%));
+    background-image: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
   }
 
   .grain-overlay {
