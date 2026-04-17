@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Home, Building2, Wrench, Zap, Droplets, BatteryCharging, ArrowRight } from "lucide-react";
+import { Home, Building2, Wrench, Zap, Droplets, BatteryCharging, ClipboardList, Hammer, Plug, FileCheck, Settings, ShieldCheck } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/i18n/LanguageContext";
 
@@ -19,21 +19,28 @@ const ServicesSection = () => {
       title: t("services.korteruhistutele"),
       desc: t("services.korteruhistuteleDesc"),
       bullets: [
-        t("services.korteruhistuteleDetail"),
+        { icon: Building2, text: "Ühistu remonditööd" },
+        { icon: ClipboardList, text: "Projekteerimine ja nõustamine" },
+        { icon: Settings, text: "Hooldus ja tehnosüsteemid" },
+        { icon: ShieldCheck, text: "Usaldusväärne koostöö" },
       ],
       href: "/korteruhistutele",
       img: imgKorteruhistu,
+      cta: "Vaata lahendusi",
     },
     {
       icon: BatteryCharging,
       title: "Taristuse projekteerimine ja ehitamine",
-      desc: t("services.evDesc"),
+      desc: "Tehnlahendus alates projektist kuni käivitamiseni",
       bullets: [
-        t("services.evDetail"),
+        { icon: FileCheck, text: "Projekteerimine ja kooskõlastamine" },
+        { icon: Hammer, text: "Ehitus ja paigaldus" },
+        { icon: Plug, text: "Ühendamine ja käivitamine" },
       ],
       href: "/ev-laadimine",
       img: imgEv,
       highlight: true,
+      cta: "Vaata teenuseid",
     },
   ];
 
@@ -76,7 +83,7 @@ const ServicesSection = () => {
                 to={item.href}
                 className="group relative flex flex-col md:flex-row rounded-xl overflow-hidden border border-border hover:border-primary/30 hover:shadow-lg transition-all duration-300 bg-card h-full"
               >
-                <div className="relative md:w-1/2 h-48 md:h-auto overflow-hidden">
+                <div className="relative md:w-2/5 h-48 md:h-auto overflow-hidden">
                   <img
                     src={item.img}
                     alt={item.title}
@@ -89,16 +96,23 @@ const ServicesSection = () => {
                     </span>
                   )}
                 </div>
-                <div className="p-6 md:w-1/2 flex flex-col justify-center">
-                  <h3 className="font-heading font-semibold text-xl text-foreground mb-2">
+                <div className="p-6 md:w-3/5 flex flex-col">
+                  <h3 className="font-heading font-bold text-2xl text-foreground mb-1">
                     {item.title}
                   </h3>
                   <p className="text-muted-foreground text-sm mb-4">{item.desc}</p>
-                  {item.bullets.map((b, j) => (
-                    <p key={j} className="text-muted-foreground/70 text-sm leading-relaxed mb-1">• {b}</p>
-                  ))}
-                  <span className="inline-flex items-center gap-1 text-primary text-sm font-medium mt-4 group-hover:translate-x-1 transition-transform duration-300">
-                    {t("services.readMore")} <ArrowRight size={14} />
+                  <ul className="space-y-2.5 mb-5 flex-1">
+                    {item.bullets.map((b, j) => (
+                      <li key={j} className="flex items-center gap-3 text-foreground/80 text-sm">
+                        <span className="w-7 h-7 rounded-md bg-muted flex items-center justify-center text-primary shrink-0">
+                          <b.icon size={14} />
+                        </span>
+                        {b.text}
+                      </li>
+                    ))}
+                  </ul>
+                  <span className="block w-full text-center bg-primary text-primary-foreground py-2.5 rounded-lg font-medium text-sm hover:bg-secondary transition-colors duration-200">
+                    {item.cta}
                   </span>
                 </div>
               </Link>
