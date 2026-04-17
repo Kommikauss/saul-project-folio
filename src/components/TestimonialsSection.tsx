@@ -12,16 +12,16 @@ const TestimonialsSection = () => {
   ];
 
   return (
-    <section className="py-24 lg:py-32 bg-background">
+    <section className="py-16 lg:py-20 bg-background">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10"
         >
-          <h2 className="font-heading font-extrabold text-3xl md:text-4xl text-foreground mb-4">
+          <h2 className="font-heading font-extrabold text-2xl md:text-3xl text-foreground mb-3">
             {t("testimonials.title")}
           </h2>
         </motion.div>
