@@ -81,7 +81,7 @@ const ServicesSection = () => {
                     src={item.img}
                     alt={item.title}
                     loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 ${item.highlight ? "object-left" : ""}`}
                   />
                   {item.highlight && (
                     <span className="absolute top-3 right-3 bg-primary text-primary-foreground text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">
