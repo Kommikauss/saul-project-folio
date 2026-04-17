@@ -45,25 +45,25 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section id="teenused" className="py-24 lg:py-32 bg-background">
+    <section id="teenused" className="py-12 lg:py-16 bg-background">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10"
         >
-          <h2 className="font-heading font-semibold text-3xl md:text-5xl text-foreground mb-4">
+          <h2 className="font-heading font-semibold text-2xl md:text-4xl text-foreground mb-3">
             {t("services.title")}
           </h2>
-          <p className="text-muted-foreground text-lg max-w-xl mx-auto">
+          <p className="text-muted-foreground text-base max-w-xl mx-auto">
             {t("services.subtitle")}
           </p>
         </motion.div>
 
         {/* Featured cards — large, side by side */}
-        <div className="grid md:grid-cols-2 gap-6 mb-10">
+        <div className="grid md:grid-cols-2 gap-4 mb-6">
           {featured.map((item, i) => (
             <motion.div
               key={i}
@@ -107,7 +107,7 @@ const ServicesSection = () => {
         </div>
 
         {/* Smaller service cards grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {services.map((service, i) => (
             <motion.div
               key={i}
