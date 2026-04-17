@@ -14,7 +14,7 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="relative min-h-[60vh] flex items-center bg-background overflow-hidden pt-20 pb-10">
+    <section className="relative min-h-[50vh] flex items-center bg-background overflow-hidden pt-16 pb-6">
       <div className="max-w-7xl mx-auto px-6 lg:px-10 w-full">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="relative z-10 py-8 lg:py-12">

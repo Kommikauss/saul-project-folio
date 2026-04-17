@@ -13,24 +13,24 @@ const WhyUsSection = () => {
   ];
 
   return (
-    <section id="meist" className="py-24 lg:py-32 bg-muted/30 overflow-hidden">
+    <section id="meist" className="py-16 lg:py-20 bg-muted/30 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10"
         >
-          <h2 className="font-heading font-extrabold text-3xl md:text-5xl text-foreground mb-4">
+          <h2 className="font-heading font-extrabold text-2xl md:text-4xl text-foreground mb-3">
             {t("whyUs.title")} <span className="text-primary">{t("whyUs.titleHighlight")}</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-md mx-auto">
+          <p className="text-muted-foreground text-base max-w-md mx-auto">
             {t("whyUs.subtitle")}
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {values.map((v, i) => (
             <motion.div
               key={i}
@@ -39,12 +39,12 @@ const WhyUsSection = () => {
               viewport={{ once: true }}
               transition={{ delay: i * 0.12, duration: 0.5 }}
               whileHover={{ y: -4 }}
-              className="bg-background rounded-2xl border border-border p-7 pb-8 text-center hover:shadow-lg transition-all duration-300 group overflow-visible"
+              className="bg-background rounded-xl border border-border p-5 pb-6 text-center hover:shadow-md transition-all duration-300 group overflow-visible"
             >
               <motion.div
                 animate={{ scale: [1, 1.05, 1] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: i * 0.5 }}
-                className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-5 group-hover:bg-primary/20 transition-colors"
+                className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors"
               >
                 <v.icon size={24} className="text-primary" />
               </motion.div>

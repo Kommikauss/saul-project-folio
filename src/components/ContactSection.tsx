@@ -7,7 +7,7 @@ const ContactSection = () => {
   const { t } = useLanguage();
 
   return (
-    <section id="kontakt" className="bg-foreground py-24 lg:py-32 relative overflow-hidden">
+    <section id="kontakt" className="bg-foreground py-16 lg:py-20 relative overflow-hidden">
       <motion.div
         animate={{ x: [0, 30, 0], y: [0, -20, 0] }}
         transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
@@ -15,24 +15,24 @@ const ContactSection = () => {
       />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-10 items-start">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="font-heading font-extrabold text-3xl md:text-5xl text-background mb-4 leading-tight">
+            <h2 className="font-heading font-extrabold text-2xl md:text-4xl text-background mb-3 leading-tight">
               {t("contact.title")}
               <br />
               <span className="text-primary">{t("contact.titleHighlight")}</span>
             </h2>
-            <p className="text-background/60 text-lg mb-8">
+            <p className="text-background/60 text-base mb-6">
               {t("contact.subtitle")}
             </p>
             <Link
               to="/pakkumine"
-              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-lg font-heading font-bold text-base hover:brightness-110 transition-all duration-300 hover:gap-3 group"
+              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-heading font-bold text-sm hover:brightness-110 transition-all duration-300 hover:gap-3 group"
             >
               {t("contact.cta")}
               <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
