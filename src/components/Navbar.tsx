@@ -21,6 +21,8 @@ const Navbar = () => {
 
   const navLinks = [
     { label: t("nav.services"), href: isHome ? "#teenused" : "/#teenused" },
+    { label: t("nav.associations"), href: "/korteruhistutele" },
+    { label: t("nav.projects"), href: isHome ? "#projektid" : "/#projektid" },
     { label: t("nav.about"), href: isHome ? "#meist" : "/#meist" },
     { label: t("nav.contact"), href: isHome ? "#kontakt" : "/#kontakt" },
   ];
@@ -34,37 +36,45 @@ const Navbar = () => {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
             ? "bg-background/95 backdrop-blur-md shadow-md border-b border-border"
-            : "bg-background/80 backdrop-blur-sm"
+            : "bg-background/95 backdrop-blur-sm border-b border-border/40"
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-16 lg:h-20">
-          <Link to="/" className="flex items-center">
-            <img src={logoSaul} alt="Saul Project" className="h-9 lg:h-11" />
+          <Link to="/" className="flex items-center gap-2.5">
+            <Menu size={22} className="text-primary" strokeWidth={2.5} />
+            <img src={logoSaul} alt="Saul Project" className="h-8 lg:h-10" />
           </Link>
 
           <div className="hidden lg:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200 relative group"
-              >
-                {link.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
-              </a>
-            ))}
+            {navLinks.map((link) => {
+              const isInternal = link.href.startsWith("/") && !link.href.includes("#");
+              const baseClass = "text-sm font-medium text-foreground/80 hover:text-primary transition-colors duration-200 relative group";
+              return isInternal ? (
+                <Link key={link.href} to={link.href} className={baseClass}>
+                  {link.label}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+                </Link>
+              ) : (
+                <a key={link.href} href={link.href} className={baseClass}>
+                  {link.label}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+                </a>
+              );
+            })}
 
-            <div className="flex items-center gap-1 text-sm text-muted-foreground border border-border rounded-full px-2 py-1">
-              {(["ET", "EN", "RU"] as const).map((l) => (
-                <button
-                  key={l}
-                  onClick={() => setLang(l)}
-                  className={`px-2 py-0.5 rounded-full transition-all text-xs font-medium ${
-                    lang === l ? "bg-foreground text-background" : "hover:text-foreground"
-                  }`}
-                >
-                  {l}
-                </button>
+            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              {(["ET", "RU"] as const).map((l, i) => (
+                <span key={l} className="flex items-center gap-2">
+                  <button
+                    onClick={() => setLang(l)}
+                    className={`transition-all text-sm font-medium ${
+                      lang === l ? "text-foreground" : "text-muted-foreground hover:text-foreground"
+                    }`}
+                  >
+                    {l}
+                  </button>
+                  {i === 0 && <span className="text-border">|</span>}
+                </span>
               ))}
             </div>
 
