@@ -55,8 +55,8 @@ const ServicesSection = () => {
           </p>
         </motion.div>
 
-        {/* Featured cards — large, side by side */}
-        <div className="grid md:grid-cols-2 gap-4 mb-6">
+        {/* Featured card */}
+        <div className="grid gap-4 mb-6">
           {featured.map((item, i) => (
             <motion.div
               key={i}
@@ -117,10 +117,7 @@ const ServicesSection = () => {
               transition={{ delay: i * 0.08, duration: 0.5 }}
               whileHover={{ y: -6, transition: { duration: 0.3 } }}
             >
-              <Link
-                to={service.href}
-                className="group relative rounded-xl overflow-hidden cursor-pointer transition-all duration-300 border border-border hover:border-primary/30 hover:shadow-lg block h-full"
-              >
+              <div className="group relative rounded-xl overflow-hidden transition-all duration-300 border border-border block h-full">
                 <div className="relative h-36 overflow-hidden">
                   <img
                     src={service.img}
@@ -128,13 +125,13 @@ const ServicesSection = () => {
                     loading="lazy"
                     width={768}
                     height={512}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-foreground/40 to-transparent" />
                 </div>
                 <div className="p-5 bg-card">
                   <div className="flex items-center gap-3 mb-2">
-                    <div className="w-9 h-9 rounded-lg flex items-center justify-center bg-muted text-foreground group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
+                    <div className="w-9 h-9 rounded-lg flex items-center justify-center bg-muted text-foreground">
                       <service.icon size={16} />
                     </div>
                     <h3 className="font-heading font-semibold text-base text-foreground">
@@ -144,7 +141,7 @@ const ServicesSection = () => {
                   <p className="text-muted-foreground text-sm mb-1">{service.desc}</p>
                   <p className="text-muted-foreground/70 text-xs leading-relaxed">{service.detail}</p>
                 </div>
-              </Link>
+              </div>
             </motion.div>
           ))}
         </div>
