@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Home, Building2, Wrench, Zap, Droplets, BatteryCharging, ClipboardList, Hammer, Plug, FileCheck, Settings, ShieldCheck } from "lucide-react";
-import { Link } from "react-router-dom";
+
 import { useLanguage } from "@/i18n/LanguageContext";
 
 import imgEraisikutele from "@/assets/service-eraisikutele.jpg";
@@ -79,16 +79,15 @@ const ServicesSection = () => {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ delay: i * 0.1, duration: 0.5 }}
             >
-              <Link
-                to={item.href}
-                className="group relative flex flex-col md:flex-row rounded-xl overflow-hidden border border-border hover:border-primary/30 hover:shadow-lg transition-all duration-300 bg-card h-full"
+              <div
+                className="relative flex flex-col md:flex-row rounded-xl overflow-hidden border border-border bg-card h-full"
               >
                 <div className="relative md:w-2/5 h-48 md:h-auto overflow-hidden">
                   <img
                     src={item.img}
                     alt={item.title}
                     loading="lazy"
-                    className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 ${item.highlight ? "object-left" : ""}`}
+                    className={`w-full h-full object-cover ${item.highlight ? "object-right" : ""}`}
                   />
                   {item.highlight && (
                     <span className="absolute top-3 right-3 bg-primary text-primary-foreground text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">
@@ -101,7 +100,7 @@ const ServicesSection = () => {
                     {item.title}
                   </h3>
                   <p className="text-muted-foreground text-sm mb-4">{item.desc}</p>
-                  <ul className="space-y-2.5 mb-5 flex-1">
+                  <ul className="space-y-2.5 flex-1">
                     {item.bullets.map((b, j) => (
                       <li key={j} className="flex items-center gap-3 text-foreground/80 text-sm">
                         <span className="w-7 h-7 rounded-md bg-muted flex items-center justify-center text-primary shrink-0">
@@ -111,16 +110,13 @@ const ServicesSection = () => {
                       </li>
                     ))}
                   </ul>
-                  <span className="block w-full text-center bg-primary text-primary-foreground py-2.5 rounded-lg font-medium text-sm hover:bg-secondary transition-colors duration-200">
-                    {item.cta}
-                  </span>
                 </div>
-              </Link>
+              </div>
             </motion.div>
           ))}
         </div>
 
-        {/* Smaller service cards grid */}
+        {/* Smaller service cards grid — illustrative only, not clickable */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {services.map((service, i) => (
             <motion.div
@@ -129,11 +125,9 @@ const ServicesSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ delay: i * 0.08, duration: 0.5 }}
-              whileHover={{ y: -6, transition: { duration: 0.3 } }}
             >
-              <Link
-                to={service.href}
-                className="group relative rounded-xl overflow-hidden cursor-pointer transition-all duration-300 border border-border hover:border-primary/30 hover:shadow-lg block h-full"
+              <div
+                className="relative rounded-xl overflow-hidden border border-border block h-full"
               >
                 <div className="relative h-36 overflow-hidden">
                   <img
@@ -142,13 +136,13 @@ const ServicesSection = () => {
                     loading="lazy"
                     width={768}
                     height={512}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-foreground/40 to-transparent" />
                 </div>
                 <div className="p-5 bg-card">
                   <div className="flex items-center gap-3 mb-2">
-                    <div className="w-9 h-9 rounded-lg flex items-center justify-center bg-muted text-foreground group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
+                    <div className="w-9 h-9 rounded-lg flex items-center justify-center bg-muted text-foreground">
                       <service.icon size={16} />
                     </div>
                     <h3 className="font-heading font-semibold text-base text-foreground">
@@ -158,7 +152,7 @@ const ServicesSection = () => {
                   <p className="text-muted-foreground text-sm mb-1">{service.desc}</p>
                   <p className="text-muted-foreground/70 text-xs leading-relaxed">{service.detail}</p>
                 </div>
-              </Link>
+              </div>
             </motion.div>
           ))}
         </div>
