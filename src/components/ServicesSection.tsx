@@ -156,5 +156,9 @@ const ServicesSection = () => {
             </motion.div>
           ))}
         </div>
+      </div>
+    </section>
+  );
+};
 
 export default ServicesSection;
