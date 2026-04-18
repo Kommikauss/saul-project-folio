@@ -15,20 +15,6 @@ const ServicesSection = () => {
 
   const featured = [
     {
-      icon: Building2,
-      title: t("services.korteruhistutele"),
-      desc: t("services.korteruhistuteleDesc"),
-      bullets: [
-        { icon: Building2, text: "Ühistu remonditööd" },
-        { icon: ClipboardList, text: "Projekteerimine ja nõustamine" },
-        { icon: Settings, text: "Hooldus ja tehnosüsteemid" },
-        { icon: ShieldCheck, text: "Usaldusväärne koostöö" },
-      ],
-      href: "/korteruhistutele",
-      img: imgKorteruhistu,
-      cta: "Vaata lahendusi",
-    },
-    {
       icon: BatteryCharging,
       title: "Taristuse projekteerimine ja ehitamine",
       desc: "Tehnlahendus alates projektist kuni käivitamiseni",
