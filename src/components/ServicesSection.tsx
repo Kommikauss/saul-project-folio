@@ -110,6 +110,12 @@ const ServicesSection = () => {
                       </li>
                     ))}
                   </ul>
+                  <Link
+                    to={item.href}
+                    className="mt-5 block w-full text-center bg-primary text-primary-foreground py-2.5 rounded-lg font-medium text-sm hover:bg-secondary transition-colors duration-200"
+                  >
+                    {item.cta}
+                  </Link>
                 </div>
               </div>
             </motion.div>
