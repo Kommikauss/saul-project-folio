@@ -48,7 +48,7 @@ const et = {
     evDetail: "Laadijate paigaldus kortermajadele ja äripindadele.",
     new: "UUS",
     readMore: "Loe lähemalt",
-    infraTitle: "Taristue projekteerimine ja ehitamine",
+    infraTitle: "Taristu projekteerimine ja ehitamine",
     infraDesc: "Tehnlahendus alates projektist kuni käivitamiseni",
     bullet_uhistu: "Ühistu remonditööd",
     bullet_projekt: "Projekteerimine ja nõustamine",
