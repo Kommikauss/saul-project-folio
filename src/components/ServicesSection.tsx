@@ -82,7 +82,7 @@ const ServicesSection = () => {
               <div
                 className="relative flex flex-col md:flex-row rounded-xl overflow-hidden border border-border bg-card h-full"
               >
-                <div className="relative md:w-2/5 h-48 md:h-auto overflow-hidden">
+                <div className="relative md:w-1/2 h-56 md:h-auto md:min-h-[320px] overflow-hidden">
                   <img
                     src={item.img}
                     alt={item.title}
@@ -95,7 +95,7 @@ const ServicesSection = () => {
                     </span>
                   )}
                 </div>
-                <div className="p-6 md:w-3/5 flex flex-col">
+                <div className="p-6 md:w-1/2 flex flex-col">
                   <h3 className="font-heading font-bold text-2xl text-foreground mb-1">
                     {item.title}
                   </h3>
