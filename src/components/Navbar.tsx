@@ -21,7 +21,7 @@ const Navbar = () => {
 
   const navLinks = [
     { label: t("nav.services"), href: isHome ? "#teenused" : "/#teenused" },
-    { label: t("nav.projects"), href: isHome ? "#projektid" : "/#projektid" },
+    { label: t("nav.projects"), href: "/projektid" },
     { label: t("nav.about"), href: isHome ? "#meist" : "/#meist" },
     { label: t("nav.contact"), href: isHome ? "#kontakt" : "/#kontakt" },
   ];
