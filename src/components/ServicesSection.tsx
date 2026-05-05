@@ -82,7 +82,7 @@ const ServicesSection = () => {
               <div
                 className="relative flex flex-col md:flex-row rounded-xl overflow-hidden border border-border bg-card h-full"
               >
-                <div className="relative md:w-1/2 h-56 md:h-auto md:min-h-[320px] overflow-hidden">
+                <div className="relative md:w-1/2 h-64 md:h-auto md:min-h-[380px] overflow-hidden">
                   <img
                     src={item.img}
                     alt={item.title}
