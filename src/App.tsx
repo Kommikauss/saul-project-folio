@@ -14,6 +14,7 @@ import Elektritood from "./pages/Elektritood.tsx";
 import Torutood from "./pages/Torutood.tsx";
 import EvLaadimine from "./pages/EvLaadimine.tsx";
 import QuotePage from "./pages/QuotePage.tsx";
+import Projektid from "./pages/Projektid.tsx";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +29,7 @@ const App = () => (
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/pakkumine" element={<QuotePage />} />
+              <Route path="/projektid" element={<Projektid />} />
               <Route path="/eraisikutele" element={<Eraisikutele />} />
               <Route path="/korteruhistutele" element={<Korteruhistutele />} />
               <Route path="/hooldus-ja-remont" element={<HooldusJaRemont />} />

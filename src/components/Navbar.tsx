@@ -21,7 +21,7 @@ const Navbar = () => {
 
   const navLinks = [
     { label: t("nav.services"), href: isHome ? "#teenused" : "/#teenused" },
-    { label: t("nav.projects"), href: isHome ? "#projektid" : "/#projektid" },
+    { label: t("nav.projects"), href: "/projektid" },
     { label: t("nav.about"), href: isHome ? "#meist" : "/#meist" },
     { label: t("nav.contact"), href: isHome ? "#kontakt" : "/#kontakt" },
   ];
@@ -62,7 +62,7 @@ const Navbar = () => {
             })}
 
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              {(["ET", "RU"] as const).map((l, i) => (
+              {(["ET", "EN", "RU"] as const).map((l, i) => (
                 <span key={l} className="flex items-center gap-2">
                   <button
                     onClick={() => setLang(l)}
@@ -72,7 +72,7 @@ const Navbar = () => {
                   >
                     {l}
                   </button>
-                  {i === 0 && <span className="text-border">|</span>}
+                  {i < 2 && <span className="text-border">|</span>}
                 </span>
               ))}
             </div>

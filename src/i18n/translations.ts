@@ -48,7 +48,7 @@ const et = {
     evDetail: "Laadijate paigaldus kortermajadele ja äripindadele.",
     new: "UUS",
     readMore: "Loe lähemalt",
-    infraTitle: "Taristue projekteerimine ja ehitamine",
+    infraTitle: "Taristu projekteerimine ja ehitamine",
     infraDesc: "Tehnlahendus alates projektist kuni käivitamiseni",
     bullet_uhistu: "Ühistu remonditööd",
     bullet_projekt: "Projekteerimine ja nõustamine",
@@ -163,6 +163,16 @@ const et = {
     clearComm: "Selge kommunikatsioon",
     readMore: "Loe lähemalt",
     cta: "Küsi pakkumist",
+  },
+  projectsPage: {
+    title: "Meie projektid",
+    subtitle: "Vaata meie teostatud töid — korteriühistud, eramud ja taristu.",
+    filterAll: "Kõik",
+    filterAssociations: "Korteriühistud",
+    filterPrivate: "Eraisikud",
+    filterInfra: "Taristu",
+    emptyTitle: "Projektid lisanduvad peagi",
+    emptyDesc: "Täiendame portfooliot pidevalt uute teostatud töödega.",
   },
 };
 
@@ -330,6 +340,16 @@ const en: typeof et = {
     readMore: "Read more",
     cta: "Get a Quote",
   },
+  projectsPage: {
+    title: "Our Projects",
+    subtitle: "Browse our completed works — housing associations, private homes and infrastructure.",
+    filterAll: "All",
+    filterAssociations: "Housing Associations",
+    filterPrivate: "Private Clients",
+    filterInfra: "Infrastructure",
+    emptyTitle: "Projects coming soon",
+    emptyDesc: "We are continuously updating our portfolio with new completed works.",
+  },
 };
 
 const ru: typeof et = {
@@ -495,6 +515,16 @@ const ru: typeof et = {
     clearComm: "Понятное общение",
     readMore: "Подробнее",
     cta: "Запросить предложение",
+  },
+  projectsPage: {
+    title: "Наши проекты",
+    subtitle: "Посмотрите наши выполненные работы — товарищества, частные дома и инфраструктура.",
+    filterAll: "Все",
+    filterAssociations: "Товарищества",
+    filterPrivate: "Частные лица",
+    filterInfra: "Инфраструктура",
+    emptyTitle: "Проекты скоро появятся",
+    emptyDesc: "Мы постоянно обновляем портфолио новыми выполненными работами.",
   },
 };
 

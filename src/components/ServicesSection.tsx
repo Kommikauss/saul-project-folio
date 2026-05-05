@@ -8,7 +8,7 @@ import imgKorteruhistu from "@/assets/service-korteruhistu.jpg";
 import imgHooldus from "@/assets/service-hooldus.jpg";
 import imgElektri from "@/assets/service-elektri.jpg";
 import imgTorutood from "@/assets/service-torutood.jpg";
-import imgEv from "@/assets/service-ev.jpg";
+import imgEv from "@/assets/service-ev-new.jpg";
 
 const ServicesSection = () => {
   const { t } = useLanguage();
@@ -19,28 +19,28 @@ const ServicesSection = () => {
       title: t("services.korteruhistutele"),
       desc: t("services.korteruhistuteleDesc"),
       bullets: [
-        { icon: Building2, text: "Ühistu remonditööd" },
-        { icon: ClipboardList, text: "Projekteerimine ja nõustamine" },
-        { icon: Settings, text: "Hooldus ja tehnosüsteemid" },
-        { icon: ShieldCheck, text: "Usaldusväärne koostöö" },
+        { icon: Building2, text: t("services.bullet_uhistu") },
+        { icon: ClipboardList, text: t("services.bullet_projekt") },
+        { icon: Settings, text: t("services.bullet_hooldus") },
+        { icon: ShieldCheck, text: t("services.bullet_koostoo") },
       ],
       href: "/korteruhistutele",
       img: imgKorteruhistu,
-      cta: "Vaata lahendusi",
+      cta: t("services.ctaSolutions"),
     },
     {
       icon: BatteryCharging,
-      title: "Taristuse projekteerimine ja ehitamine",
-      desc: "Tehnlahendus alates projektist kuni käivitamiseni",
+      title: t("services.infraTitle"),
+      desc: t("services.infraDesc"),
       bullets: [
-        { icon: FileCheck, text: "Projekteerimine ja kooskõlastamine" },
-        { icon: Hammer, text: "Ehitus ja paigaldus" },
-        { icon: Plug, text: "Ühendamine ja käivitamine" },
+        { icon: FileCheck, text: t("services.bullet_kooskolastus") },
+        { icon: Hammer, text: t("services.bullet_ehitus") },
+        { icon: Plug, text: t("services.bullet_uhendamine") },
       ],
       href: "/ev-laadimine",
       img: imgEv,
       highlight: true,
-      cta: "Vaata teenuseid",
+      cta: t("services.ctaServices"),
     },
   ];
 
@@ -82,7 +82,7 @@ const ServicesSection = () => {
               <div
                 className="relative flex flex-col md:flex-row rounded-xl overflow-hidden border border-border bg-card h-full"
               >
-                <div className="relative md:w-2/5 h-48 md:h-auto overflow-hidden">
+                <div className="relative md:w-1/2 h-56 md:h-auto md:min-h-[320px] overflow-hidden">
                   <img
                     src={item.img}
                     alt={item.title}
@@ -95,7 +95,7 @@ const ServicesSection = () => {
                     </span>
                   )}
                 </div>
-                <div className="p-6 md:w-3/5 flex flex-col">
+                <div className="p-6 md:w-1/2 flex flex-col">
                   <h3 className="font-heading font-bold text-2xl text-foreground mb-1">
                     {item.title}
                   </h3>
