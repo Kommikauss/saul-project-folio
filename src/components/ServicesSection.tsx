@@ -80,9 +80,9 @@ const ServicesSection = () => {
               transition={{ delay: i * 0.1, duration: 0.5 }}
             >
               <div
-                className="relative flex flex-col md:flex-row rounded-xl overflow-hidden border border-border bg-card h-full"
+                className="relative flex flex-col rounded-xl overflow-hidden border border-border bg-card h-full"
               >
-                <div className="relative md:w-1/2 h-64 md:h-auto md:min-h-[380px] overflow-hidden">
+                <div className="relative h-72 md:h-80 overflow-hidden">
                   <img
                     src={item.img}
                     alt={item.title}
@@ -95,7 +95,7 @@ const ServicesSection = () => {
                     </span>
                   )}
                 </div>
-                <div className="p-6 md:w-1/2 flex flex-col">
+                <div className="p-6 flex flex-col flex-1">
                   <h3 className="font-heading font-bold text-2xl text-foreground mb-1">
                     {item.title}
                   </h3>
