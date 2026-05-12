@@ -237,6 +237,8 @@ const en: typeof et = {
     bullet_uhendamine: "Connection and commissioning",
     ctaSolutions: "View solutions",
     ctaServices: "View services",
+    associationsSolutionsTitle: "Solutions for housing associations",
+    associationsSolutionsSubtitle: "Maintenance, electrical and plumbing works from one place.",
   },
   stats: {
     clients: "Satisfied clients",
@@ -413,6 +415,8 @@ const ru: typeof et = {
     bullet_uhendamine: "Подключение и запуск",
     ctaSolutions: "Смотреть решения",
     ctaServices: "Смотреть услуги",
+    associationsSolutionsTitle: "Решения для товариществ",
+    associationsSolutionsSubtitle: "Обслуживание, электрика и сантехника из одного места.",
   },
   stats: {
     clients: "Довольных клиентов",
