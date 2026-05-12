@@ -1,4 +1,4 @@
-import { Building2, Hammer, FileText } from "lucide-react";
+import { Wrench, Zap, Droplets } from "lucide-react";
 import { CheckCircle, Clock, MessageSquare } from "lucide-react";
 import SEO from "@/components/SEO";
 import ServicePageLayout from "@/components/ServicePageLayout";
@@ -8,27 +8,27 @@ const Korteruhistutele = () => (
   <>
   <SEO
     title="Korteriühistutele"
-    description="Teenused korteriühistutele — regulaarne hooldus, kiire väljakutse, remonditööd ja hoolduslepingud. Usaldusväärne partner teie majale."
+    description="Lahendused korteriühistutele — hooldus ja remont, elektritööd ning torutööd. Usaldusväärne partner teie majale."
     path="/korteruhistutele"
-    keywords="korteriühistu, korteriühistu teenused, hoolduslepingud, maja hooldus, remonditööd, Eesti"
+    keywords="korteriühistu, hooldus, elektritööd, torutööd, hoolduslepingud, Eesti"
   />
   <ServicePageLayout
     title="Korteriühistutele"
-    subtitle="Pakume korteriühistutele regulaarseid hooldusteenuseid, kiiret väljakutset, väiksematteks remonttöödeks ja lepinguid."
+    subtitle="Pakume korteriühistutele terviklahendusi — hoolduse, elektri- ja torutööd ühest kohast."
     heroImage={heroImg}
     breadcrumb="Korteriühistutele"
-    servicesIntro="Korteriühistutele regulaarsed hooldusteenused, kiire väljakutse, väiksematteks remonttöödeks ja lepingud."
+    servicesIntro="Meie lahendused korteriühistutele:"
     services={[
-      { icon: Hammer, title: "Kiire reageerimine", desc: "Tuleme kohale kiiresti ja lahendame probleemi." },
-      { icon: Building2, title: "Väiksemad parandustööd", desc: "Lekete parandamine, pistikute ja lukkude vahetus, muud väiksemaltööd." },
-      { icon: FileText, title: "Hoolduslepingud korteriühistutele", desc: "Regulaarsed hooldustööd, et hoida maja korras ja ennetada suuremaid probleeme." },
+      { icon: Wrench, title: "Hooldus ja remont", desc: "Kiire reageerimine, igapäevased remonditööd ja tehniline hooldus." },
+      { icon: Zap, title: "Elektritööd", desc: "Elektripaigaldised, valgustus ja juhtmestik — paigaldus ja hooldus." },
+      { icon: Droplets, title: "Torutööd", desc: "Vee- ja kanalisatsioonisüsteemide paigaldus, remont ja hooldus." },
     ]}
     whyItems={[
-      { icon: CheckCircle, title: "Kiire töö", desc: "Hoiame reageerime väljakutsetele." },
+      { icon: CheckCircle, title: "Kiire töö", desc: "Reageerime väljakutsetele kiirelt." },
       { icon: MessageSquare, title: "Sõbralik suhtlus", desc: "Hoiame sind kursis kogu tööprotsessiga." },
       { icon: Clock, title: "Kogemustega meeskond", desc: "Kutsetunnistusega spetsialistid." },
     ]}
-    ctaTitle="Vajad väiksemat remonditööd?"
+    ctaTitle="Vajad lahendust korteriühistule?"
     ctaSubtitle="Võta ühendust — aitame kiirelt lahenduse leida."
   />
   </>
