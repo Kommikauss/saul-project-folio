@@ -123,9 +123,24 @@ const ServicesSection = () => {
           ))}
         </div>
 
-        {/* Smaller service cards grid — illustrative only, not clickable */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {services.map((service, i) => (
+        {/* Korteriühistute lahendused — heading + 3 cards */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.5 }}
+          className="mt-12 mb-6 text-center"
+        >
+          <h3 className="font-heading font-semibold text-xl md:text-3xl text-foreground mb-2">
+            {t("services.associationsSolutionsTitle")}
+          </h3>
+          <p className="text-muted-foreground text-sm max-w-xl mx-auto">
+            {t("services.associationsSolutionsSubtitle")}
+          </p>
+        </motion.div>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
+          {associationServices.map((service, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 30 }}
@@ -133,10 +148,8 @@ const ServicesSection = () => {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ delay: i * 0.08, duration: 0.5 }}
             >
-              <div
-                className="relative rounded-xl overflow-hidden border border-border block h-full"
-              >
-                <div className="relative h-36 overflow-hidden">
+              <div className="relative rounded-xl overflow-hidden border border-border block h-full">
+                <div className="relative h-44 overflow-hidden">
                   <img
                     src={service.img}
                     alt={service.title}
@@ -163,6 +176,37 @@ const ServicesSection = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* Eraisikutele — single card */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.5 }}
+        >
+          <div className="relative rounded-xl overflow-hidden border border-border md:flex">
+            <div className="relative h-44 md:h-auto md:w-1/2 overflow-hidden">
+              <img
+                src={eraisikuteleCard.img}
+                alt={eraisikuteleCard.title}
+                loading="lazy"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="p-6 bg-card md:w-1/2 flex flex-col justify-center">
+              <div className="flex items-center gap-3 mb-2">
+                <div className="w-9 h-9 rounded-lg flex items-center justify-center bg-muted text-foreground">
+                  <eraisikuteleCard.icon size={16} />
+                </div>
+                <h3 className="font-heading font-semibold text-lg text-foreground">
+                  {eraisikuteleCard.title}
+                </h3>
+              </div>
+              <p className="text-muted-foreground text-sm mb-1">{eraisikuteleCard.desc}</p>
+              <p className="text-muted-foreground/70 text-xs leading-relaxed">{eraisikuteleCard.detail}</p>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
