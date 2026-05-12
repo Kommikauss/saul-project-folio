@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
-import { Home, Building2, BatteryCharging, ClipboardList, Hammer, Plug, FileCheck, Settings, ShieldCheck } from "lucide-react";
+import { Building2, BatteryCharging, ClipboardList, Hammer, Plug, FileCheck, Settings, ShieldCheck } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/i18n/LanguageContext";
 
-import imgEraisikutele from "@/assets/service-eraisikutele.jpg";
+
 import imgKorteruhistu from "@/assets/service-korteruhistu.jpg";
 import imgHooldus from "@/assets/service-hooldus.jpg";
 import imgElektri from "@/assets/service-elektri.jpg";
@@ -44,7 +44,7 @@ const ServicesSection = () => {
     },
   ];
 
-  const eraisikuteleCard = { icon: Home, title: t("services.eraisikutele"), desc: t("services.eraisikuteleDesc"), detail: t("services.eraisikuteleDetail"), href: "/eraisikutele", img: imgEraisikutele };
+  
 
 
   return (
@@ -118,37 +118,6 @@ const ServicesSection = () => {
           ))}
         </div>
 
-        {/* Eraisikutele — single card */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.5 }}
-          className="mt-6"
-        >
-          <div className="relative rounded-xl overflow-hidden border border-border md:flex">
-            <div className="relative h-44 md:h-auto md:w-1/2 overflow-hidden">
-              <img
-                src={eraisikuteleCard.img}
-                alt={eraisikuteleCard.title}
-                loading="lazy"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="p-6 bg-card md:w-1/2 flex flex-col justify-center">
-              <div className="flex items-center gap-3 mb-2">
-                <div className="w-9 h-9 rounded-lg flex items-center justify-center bg-muted text-foreground">
-                  <eraisikuteleCard.icon size={16} />
-                </div>
-                <h3 className="font-heading font-semibold text-lg text-foreground">
-                  {eraisikuteleCard.title}
-                </h3>
-              </div>
-              <p className="text-muted-foreground text-sm mb-1">{eraisikuteleCard.desc}</p>
-              <p className="text-muted-foreground/70 text-xs leading-relaxed">{eraisikuteleCard.detail}</p>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );
