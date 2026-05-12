@@ -59,6 +59,8 @@ const et = {
     bullet_uhendamine: "Ühendamine ja käivitamine",
     ctaSolutions: "Vaata lahendusi",
     ctaServices: "Vaata teenuseid",
+    associationsSolutionsTitle: "Korteriühistute lahendused",
+    associationsSolutionsSubtitle: "Hooldus, elektri- ja torutööd ühest kohast.",
   },
   stats: {
     clients: "Rahulolevat klienti",
