@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Home, Building2, Wrench, Zap, Droplets, BatteryCharging, ClipboardList, Hammer, Plug, FileCheck, Settings, ShieldCheck } from "lucide-react";
+import { Home, Building2, BatteryCharging, ClipboardList, Hammer, Plug, FileCheck, Settings, ShieldCheck } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/i18n/LanguageContext";
 
@@ -46,11 +46,6 @@ const ServicesSection = () => {
 
   const eraisikuteleCard = { icon: Home, title: t("services.eraisikutele"), desc: t("services.eraisikuteleDesc"), detail: t("services.eraisikuteleDetail"), href: "/eraisikutele", img: imgEraisikutele };
 
-  const associationServices = [
-    { icon: Wrench, title: t("services.hooldus"), desc: t("services.hooldusDesc"), detail: t("services.hooldusDetail"), href: "/hooldus-ja-remont", img: imgHooldus },
-    { icon: Zap, title: t("services.elektritood"), desc: t("services.elektritoodDesc"), detail: t("services.elektritoodDetail"), href: "/elektritood", img: imgElektri },
-    { icon: Droplets, title: t("services.torutood"), desc: t("services.torutoodDesc"), detail: t("services.torutoodDetail"), href: "/torutood", img: imgTorutood },
-  ];
 
   return (
     <section id="teenused" className="py-12 lg:py-16 bg-background">
@@ -123,66 +118,13 @@ const ServicesSection = () => {
           ))}
         </div>
 
-        {/* Korteriühistute lahendused — heading + 3 cards */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.5 }}
-          className="mt-12 mb-6 text-center"
-        >
-          <h3 className="font-heading font-semibold text-xl md:text-3xl text-foreground mb-2">
-            {t("services.associationsSolutionsTitle")}
-          </h3>
-          <p className="text-muted-foreground text-sm max-w-xl mx-auto">
-            {t("services.associationsSolutionsSubtitle")}
-          </p>
-        </motion.div>
-
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
-          {associationServices.map((service, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ delay: i * 0.08, duration: 0.5 }}
-            >
-              <div className="relative rounded-xl overflow-hidden border border-border block h-full">
-                <div className="relative h-44 overflow-hidden">
-                  <img
-                    src={service.img}
-                    alt={service.title}
-                    loading="lazy"
-                    width={768}
-                    height={512}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-foreground/40 to-transparent" />
-                </div>
-                <div className="p-5 bg-card">
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className="w-9 h-9 rounded-lg flex items-center justify-center bg-muted text-foreground">
-                      <service.icon size={16} />
-                    </div>
-                    <h3 className="font-heading font-semibold text-base text-foreground">
-                      {service.title}
-                    </h3>
-                  </div>
-                  <p className="text-muted-foreground text-sm mb-1">{service.desc}</p>
-                  <p className="text-muted-foreground/70 text-xs leading-relaxed">{service.detail}</p>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
         {/* Eraisikutele — single card */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.5 }}
+          className="mt-6"
         >
           <div className="relative rounded-xl overflow-hidden border border-border md:flex">
             <div className="relative h-44 md:h-auto md:w-1/2 overflow-hidden">
