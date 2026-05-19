@@ -40,7 +40,6 @@ const Navbar = () => {
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-16 lg:h-20">
           <Link to="/" className="flex items-center gap-2.5">
-            <Menu size={22} className="text-primary" strokeWidth={2.5} />
             <img src={logoSaul} alt="Saul Project" className="h-8 lg:h-10" />
           </Link>
 

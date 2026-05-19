@@ -12,6 +12,7 @@ interface ServiceItem {
   icon: LucideIcon;
   title: string;
   desc: string;
+  image?: string;
 }
 
 interface WhyItem {
@@ -153,13 +154,20 @@ const ServicePageLayout = ({
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1, duration: 0.5 }}
                 whileHover={{ y: -4 }}
-                className="bg-background rounded-2xl border border-border p-7 hover:shadow-lg hover:border-primary/30 transition-all duration-300 group"
+                className="bg-background rounded-2xl border border-border overflow-hidden hover:shadow-lg hover:border-primary/30 transition-all duration-300 group flex flex-col"
               >
-                <div className="w-12 h-12 rounded-xl bg-muted flex items-center justify-center mb-5 group-hover:bg-primary group-hover:text-primary-foreground transition-all">
-                  <s.icon size={22} />
+                {s.image && (
+                  <div className="aspect-[4/3] overflow-hidden">
+                    <img src={s.image} alt={s.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  </div>
+                )}
+                <div className="p-7">
+                  <div className="w-12 h-12 rounded-xl bg-muted flex items-center justify-center mb-5 group-hover:bg-primary group-hover:text-primary-foreground transition-all">
+                    <s.icon size={22} />
+                  </div>
+                  <h3 className="font-heading font-bold text-lg text-foreground mb-2">{s.title}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{s.desc}</p>
                 </div>
-                <h3 className="font-heading font-bold text-lg text-foreground mb-2">{s.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">{s.desc}</p>
               </motion.div>
             ))}
           </div>
