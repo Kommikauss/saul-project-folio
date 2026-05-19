@@ -37,7 +37,7 @@ const ServicesSection = () => {
         { icon: Hammer, text: t("services.bullet_ehitus") },
         { icon: Plug, text: t("services.bullet_uhendamine") },
       ],
-      href: "/ev-laadimine",
+      href: "/elektriauto-laadimistaristu",
       img: imgEv,
       highlight: true,
       cta: t("services.ctaServices"),
