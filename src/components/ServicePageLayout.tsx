@@ -12,6 +12,7 @@ interface ServiceItem {
   icon: LucideIcon;
   title: string;
   desc: string;
+  image?: string;
 }
 
 interface WhyItem {
