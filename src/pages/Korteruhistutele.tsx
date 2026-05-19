@@ -3,6 +3,9 @@ import { CheckCircle, Clock, MessageSquare } from "lucide-react";
 import SEO from "@/components/SEO";
 import ServicePageLayout from "@/components/ServicePageLayout";
 import heroImg from "@/assets/service-korteruhistu.jpg";
+import imgHooldus from "@/assets/service-hooldus.jpg";
+import imgElektri from "@/assets/service-elektritood.jpg";
+import imgTorutood from "@/assets/service-torutood.jpg";
 
 const Korteruhistutele = () => (
   <>
