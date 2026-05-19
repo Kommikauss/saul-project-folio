@@ -7,16 +7,16 @@ import heroImg from "@/assets/service-ev.jpg";
 const EvLaadimine = () => (
   <>
   <SEO
-    title="EV laadimine"
-    description="Elektriautode laadimislahendused korteriühistutele. Projekteerimine, kooskõlastamine ja paigaldus — terviklahendus alates ideest kuni valmimiseni."
-    path="/ev-laadimine"
-    keywords="EV laadimine, elektriautode laadimine, laadimistaristu, korteriühistu, elektrilaadija paigaldus, Eesti"
+    title="Elektriauto laadimistaristu"
+    description="Elektriautode laadimistaristu korteriühistutele. Projekteerimine, kooskõlastamine ja paigaldus — terviklahendus alates ideest kuni valmimiseni."
+    path="/elektriauto-laadimistaristu"
+    keywords="elektriauto laadimistaristu, EV laadimine, elektriautode laadimine, korteriühistu, elektrilaadija paigaldus, Eesti"
   />
   <ServicePageLayout
-    title="EV laadimine"
-    subtitle="Pakume terviklikke elektriautode laadimislahendusi korteriühistutele — alates projekteerimisest kuni paigalduseni."
+    title="Elektriauto laadimistaristu"
+    subtitle="Pakume terviklikke elektriauto laadimistaristu lahendusi korteriühistutele — alates projekteerimisest kuni paigalduseni."
     heroImage={heroImg}
-    breadcrumb="EV laadimine"
+    breadcrumb="Elektriauto laadimistaristu"
     servicesIntro="Täislahendus alates projektist kuni paigalduseni."
     services={[
       { icon: FileText, title: "Projekteerimine ja kooskõlastamine", desc: "Koostame projekti ja aitame kõik vajalikud kooskõlastused." },
@@ -28,7 +28,7 @@ const EvLaadimine = () => (
       { icon: Clock, title: "Kiire ja kindel töö", desc: "Reageerime kiiresti ja teeme tööd õigeaegselt." },
       { icon: Zap, title: "Täislahendus", desc: "Projektist kuni paigalduseni — kõik ühest kohast." },
     ]}
-    ctaTitle="Vajate EV laadimislahendust?"
+    ctaTitle="Vajate elektriauto laadimistaristut?"
     ctaSubtitle="Võta ühendust — aitame kiirelt lahenduse leida."
   />
   </>
