@@ -22,9 +22,9 @@ const Korteruhistutele = () => (
     breadcrumb="Korteriühistutele"
     servicesIntro="Meie lahendused korteriühistutele:"
     services={[
-      { icon: Wrench, title: "Hooldus ja remont", desc: "Kiire reageerimine, igapäevased remonditööd ja tehniline hooldus." },
-      { icon: Zap, title: "Elektritööd", desc: "Elektripaigaldised, valgustus ja juhtmestik — paigaldus ja hooldus." },
-      { icon: Droplets, title: "Torutööd", desc: "Vee- ja kanalisatsioonisüsteemide paigaldus, remont ja hooldus." },
+      { icon: Wrench, title: "Hooldus ja remont", desc: "Kiire reageerimine, igapäevased remonditööd ja tehniline hooldus.", image: imgHooldus },
+      { icon: Zap, title: "Elektritööd", desc: "Elektripaigaldised, valgustus ja juhtmestik — paigaldus ja hooldus.", image: imgElektri },
+      { icon: Droplets, title: "Torutööd", desc: "Vee- ja kanalisatsioonisüsteemide paigaldus, remont ja hooldus.", image: imgTorutood },
     ]}
     whyItems={[
       { icon: CheckCircle, title: "Kiire töö", desc: "Reageerime väljakutsetele kiirelt." },
